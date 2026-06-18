@@ -9,6 +9,14 @@
 </head>
 <body>
 
+<!-- ── Modal cartelera ── -->
+<div id="modal-cartelera" role="dialog" aria-modal="true" aria-label="Cartelera del curso">
+  <div id="modal-box">
+    <button id="modal-close" aria-label="Cerrar">&times;</button>
+    <img src="assets/cartelera.png" alt="Cartelera del curso Introducción a la IA en Investigación en Salud">
+  </div>
+</div>
+
 <!-- ── Overlay móvil ── -->
 <div id="sidebar-overlay" aria-hidden="true"></div>
 
@@ -57,6 +65,23 @@
 <script src="js/copy.js"></script>
 <script src="js/progress.js"></script>
 <script src="js/render.js"></script>
+<script>
+  (function () {
+    var modal = document.getElementById('modal-cartelera');
+    var closeBtn = document.getElementById('modal-close');
+    function cerrar() {
+      modal.classList.remove('visible');
+      document.body.style.overflow = '';
+    }
+    closeBtn.addEventListener('click', cerrar);
+    modal.addEventListener('click', function (e) { if (e.target === modal) cerrar(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') cerrar(); });
+    window.addEventListener('load', function () {
+      modal.classList.add('visible');
+      document.body.style.overflow = 'hidden';
+    });
+  })();
+</script>
 
 </body>
 </html>
