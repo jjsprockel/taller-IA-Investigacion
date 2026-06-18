@@ -1861,7 +1861,186 @@ ${card('Recomendación pedagógica', `
   ]
 },
 
-/* ══════════════ 7. REQUISITOS E INSTRUCCIONES ══════════════ */
+/* ══════════════ 7. NOSOTROS ══════════════ */
+{
+  id: 'nosotros',
+  menuTitle: 'Nosotros · Equipo y Laboratorio',
+  tabs: [
+
+    /* ── Tab 1: Laboratorio ProfundaMente ── */
+    {
+      id: 'nos-lab',
+      title: 'Laboratorio ProfundaMente',
+      content: `
+<div class="nos-hero">
+  <div class="nos-hero-logos">
+    <img src="assets/logo-fucs-dark.png" alt="FUCS">
+    <img src="assets/logo-profundamente-dark.png" alt="ProfundaMente">
+  </div>
+  <h1>Laboratorio ProfundaMente</h1>
+  <p>Investigación, innovación y formación en Inteligencia Artificial aplicada a la Salud · FUCS</p>
+</div>
+
+<div class="nos-section">
+  <div class="nos-section-body">
+    <p class="nos-lead">ProfundaMente es un laboratorio de investigación e innovación orientado al desarrollo de soluciones basadas en evidencia, la formación de talento y la transformación de los procesos clínicos, investigativos y educativos en salud.</p>
+    <p>El laboratorio integra un equipo interdisciplinario de profesionales con experiencia en medicina, ciencias biomédicas, ciencia de datos e inteligencia artificial, comprometidos con la generación de conocimiento y su aplicación responsable en el contexto del sistema de salud.</p>
+  </div>
+</div>
+
+<div class="nos-enfoque-grid">
+  <div class="nos-enfoque-card">
+    <div class="nos-enfoque-icon">🔬</div>
+    <h4>Investigación científica rigurosa</h4>
+    <p>Proyectos con estándares metodológicos sólidos, reproducibles y trazables.</p>
+  </div>
+  <div class="nos-enfoque-card">
+    <div class="nos-enfoque-icon">💻</div>
+    <h4>Desarrollo tecnológico aplicado</h4>
+    <p>Herramientas, modelos y plataformas orientadas a necesidades reales del sistema de salud.</p>
+  </div>
+  <div class="nos-enfoque-card">
+    <div class="nos-enfoque-icon">✅</div>
+    <h4>Validación clínica y metodológica</h4>
+    <p>Evaluación crítica de la utilidad, seguridad y equidad de las soluciones desarrolladas.</p>
+  </div>
+  <div class="nos-enfoque-card">
+    <div class="nos-enfoque-icon">🛡️</div>
+    <h4>Implementación responsable</h4>
+    <p>Marco ético, regulatorio y científico que guía cada etapa del desarrollo e integración de IA.</p>
+  </div>
+</div>
+
+<div class="nos-proposito">
+  <span class="nos-proposito-label">Propósito</span>
+  <h2>Contribuir a la transformación del sistema de salud mediante el desarrollo e implementación de inteligencia artificial basada en evidencia.</h2>
+  <p>Promoviendo la equidad, la eficiencia y la calidad en la atención, así como la formación de nuevas generaciones de profesionales en salud digital.</p>
+</div>
+`
+    },
+
+    /* ── Tab 2: Énfasis en educación en IA ── */
+    {
+      id: 'nos-educacion',
+      title: 'Énfasis en educación en IA',
+      content: `
+<div class="nos-section">
+  <h2 class="nos-section-title">Énfasis en educación en Inteligencia Artificial</h2>
+  <p class="nos-lead">ProfundaMente desarrolla programas formativos que integran el uso crítico, transparente y reproducible de herramientas de inteligencia artificial generativa en investigación, docencia y comunicación académica en ciencias de la salud.</p>
+</div>
+
+<div class="nos-edu-grid">
+  <div class="nos-edu-card accent-azul">
+    <h4>¿Por qué formar en IA en salud?</h4>
+    <p>La IA generativa está transformando la práctica clínica, la investigación y la educación médica. Formar profesionales capaces de usarla con criterio, verificar sus resultados y reconocer sus limitaciones es una necesidad urgente y una responsabilidad institucional.</p>
+  </div>
+  <div class="nos-edu-card accent-dorado">
+    <h4>Enfoque pedagógico</h4>
+    <p>Aprendizaje activo basado en productos, práctica guiada con herramientas reales, progresión de complejidad y reflexión crítica. Cada sesión produce un artefacto verificable aplicable al contexto académico del participante.</p>
+  </div>
+</div>
+
+<div class="nos-section" style="margin-top:24px">
+  <h3 class="nos-subsection-title">Líneas formativas del laboratorio</h3>
+  ${tabla(
+    ['Línea','Descripción','Herramientas y métodos'],
+    [
+      ['Interacción con chatbots y prompts','Diseño estratégico de instrucciones para tareas académicas e investigativas','ChatGPT, Gemini, técnicas de prompting estructurado'],
+      ['Lectura y síntesis basada en fuentes','Análisis documental asistido por IA con trazabilidad de fuentes','NotebookLM, flujos de extracción documental'],
+      ['Asistentes académicos personalizados','Diseño de GPTs y Gems para automatizar flujos repetitivos en salud','GPT Store, Gemini Gems, metaprompts'],
+      ['Investigación profunda asistida','Exploración documentada de evidencia con evaluación crítica de fuentes','Deep Research, matrices de análisis crítico'],
+      ['Escritura académica asistida','Planificación, redacción, revisión y adaptación de textos científicos','Canvas, flujos de revisión iterativa'],
+      ['Ciencia de datos reproducible','Análisis de bases de datos en salud con Python en entornos colaborativos','Google Colab, scikit-learn, XGBoost, LightGBM'],
+    ]
+  )}
+</div>
+
+<div class="nos-section" style="margin-top:24px">
+  <h3 class="nos-subsection-title">Principios transversales de formación</h3>
+  <div class="nos-principios-grid">
+    <div class="nos-principio"><span>🎯</span><div><strong>Verificación humana</strong><p>Toda salida de IA debe contrastarse con fuentes, datos o criterios metodológicos.</p></div></div>
+    <div class="nos-principio"><span>📋</span><div><strong>Transparencia</strong><p>Documentar prompts, decisiones, fuentes, limitaciones y uso de IA en cada producto.</p></div></div>
+    <div class="nos-principio"><span>🔄</span><div><strong>Transferencia</strong><p>Los participantes trabajan con sus propios temas, artículos o bases de datos.</p></div></div>
+    <div class="nos-principio"><span>⚖️</span><div><strong>Responsabilidad ética</strong><p>Evitar datos sensibles sin autorización y reconocer que la IA no sustituye el juicio clínico ni metodológico.</p></div></div>
+  </div>
+</div>
+`
+    },
+
+    /* ── Tab 3: El equipo ── */
+    {
+      id: 'nos-equipo',
+      title: 'El equipo',
+      content: `
+<div class="nos-section">
+  <h2 class="nos-section-title">Equipo docente del taller</h2>
+  <p class="nos-lead">El taller es dirigido por dos investigadores y docentes con trayectoria complementaria en medicina clínica, ciencias biomédicas e inteligencia artificial aplicada a la salud.</p>
+</div>
+
+<!-- John Jaime Sprockel -->
+<div class="nos-team-card">
+  <div class="nos-team-photo-wrap">
+    <img src="assets/team-john.jpg" alt="John Jaime Sprockel Díaz" class="nos-team-photo">
+    <div class="nos-team-links">
+      <a href="https://www.linkedin.com/in/john-jaime-sprockel-diaz-6961921b1/" target="_blank" rel="noopener" class="nos-link-btn nos-link-primary">LinkedIn</a>
+      <a href="https://www.researchgate.net/profile/John-Sprockel" target="_blank" rel="noopener" class="nos-link-btn nos-link-secondary">ResearchGate</a>
+    </div>
+  </div>
+  <div class="nos-team-bio">
+    <div class="nos-team-header">
+      <h3>John Jaime Sprockel Díaz</h3>
+      <span class="nos-team-credentials">MD ESP, MSc, MBA</span>
+    </div>
+    <p class="nos-team-role">Médico internista · Director Laboratorio ProfundaMente</p>
+    <p class="nos-team-summary">Médico internista, profesor e investigador con enfoque en inteligencia artificial aplicada a la salud, analítica clínica y desarrollo de modelos predictivos.</p>
+    <div class="nos-team-detail">
+      <p>Cuenta con formación de maestría en epidemiología clínica y MBA, con experiencia en el diseño, implementación y validación de soluciones basadas en inteligencia artificial en contextos clínicos y académicos. Su trabajo se centra en la integración de modelos de machine learning, deep learning y procesamiento de lenguaje natural en procesos asistenciales, investigación clínica y educación médica.</p>
+      <p>Ha liderado iniciativas de innovación en salud digital, incluyendo el desarrollo de sistemas de apoyo a la decisión clínica, plataformas de análisis de datos y proyectos de patología digital, promoviendo la articulación entre investigación, tecnología y práctica clínica.</p>
+    </div>
+    <div class="nos-team-tags">
+      <span>Machine Learning</span>
+      <span>Medicina Interna</span>
+      <span>Analítica Clínica</span>
+      <span>NLP</span>
+      <span>Educación médica</span>
+    </div>
+  </div>
+</div>
+
+<!-- Arley Gómez -->
+<div class="nos-team-card">
+  <div class="nos-team-photo-wrap">
+    <img src="assets/team-arley.jpg" alt="Arley Gómez López" class="nos-team-photo">
+    <div class="nos-team-links">
+      <a href="https://www.linkedin.com/in/arley-g%C3%B3mez-086a7b24/" target="_blank" rel="noopener" class="nos-link-btn nos-link-primary">LinkedIn</a>
+      <a href="https://www.researchgate.net/profile/Arley-Gomez-Lopez" target="_blank" rel="noopener" class="nos-link-btn nos-link-secondary">ResearchGate</a>
+    </div>
+  </div>
+  <div class="nos-team-bio">
+    <div class="nos-team-header">
+      <h3>Arley Gómez López</h3>
+      <span class="nos-team-credentials">MD, PhD</span>
+    </div>
+    <p class="nos-team-role">Médico cirujano · Docente-investigador FUCS</p>
+    <p class="nos-team-summary">Docente investigador de la Fundación Universitaria de Ciencias de la Salud (FUCS), con formación interdisciplinaria en medicina, biología y ciencias biomédicas.</p>
+    <div class="nos-team-detail">
+      <p>Médico cirujano y biólogo, con maestría en biología molecular y biotecnología, doctorado en ciencias biomédicas y formación posdoctoral en nanotecnología aplicada a la medicina. Posee amplia experiencia en investigación biomédica, medicina traslacional y nanomedicina.</p>
+      <p>Ha participado como evaluador de proyectos de investigación clínica y biomédica, en programas de formación doctoral, y cuenta con experiencia en el desarrollo de redes académicas y científicas a nivel nacional e internacional.</p>
+    </div>
+    <div class="nos-team-tags">
+      <span>Biología molecular</span>
+      <span>Nanomedicina</span>
+      <span>Medicina traslacional</span>
+      <span>Investigación biomédica</span>
+    </div>
+  </div>
+</div>
+`
+    }
+  ]
+},
+
+/* ══════════════ 8. REQUISITOS E INSTRUCCIONES ══════════════ */
 {
   id: 'requisitos',
   menuTitle: 'Requisitos e instrucciones',

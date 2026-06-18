@@ -819,6 +819,222 @@ footer strong { color: #fff; }
   .card-header { padding: 10px 14px; font-size: .85rem; }
 }
 
+/* ════════════════════════════════
+   NOSOTROS — estilos de la sección
+   ════════════════════════════════ */
+
+/* Hero */
+.nos-hero {
+  background: linear-gradient(135deg, var(--azul-marino) 0%, var(--azul-medio) 100%);
+  padding: 36px 36px 32px;
+  margin: -28px -32px 32px;
+  color: #fff;
+  border-radius: 0 0 20px 20px;
+}
+.nos-hero-logos {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.nos-hero-logos img { max-height: 48px; object-fit: contain; }
+.nos-hero h1 { font-size: 1.7rem; font-weight: 800; line-height: 1.2; margin-bottom: 8px; }
+.nos-hero p  { opacity: .85; font-size: .95rem; }
+
+/* Sección genérica */
+.nos-section { margin-bottom: 28px; }
+.nos-section-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--azul-marino);
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(217,164,65,.4);
+}
+.nos-subsection-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--azul-medio);
+  margin-bottom: 12px;
+}
+.nos-section-body { color: var(--texto); line-height: 1.7; }
+.nos-lead {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--azul-marino);
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+.nos-section p { margin-bottom: .9em; color: var(--texto-sec); line-height: 1.65; }
+
+/* Grid de enfoque */
+.nos-enfoque-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.nos-enfoque-card {
+  background: var(--surface);
+  border: 1px solid #E2E8F0;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: var(--sombra-card);
+  transition: transform var(--trans), box-shadow var(--trans);
+}
+.nos-enfoque-card:hover { transform: translateY(-4px); box-shadow: var(--sombra); }
+.nos-enfoque-icon { font-size: 1.6rem; margin-bottom: 10px; }
+.nos-enfoque-card h4 { font-size: .88rem; font-weight: 700; color: var(--azul-marino); margin-bottom: 6px; }
+.nos-enfoque-card p  { font-size: .82rem; color: var(--texto-sec); line-height: 1.4; }
+
+/* Propósito */
+.nos-proposito {
+  background: linear-gradient(135deg, var(--azul-marino), var(--azul-medio));
+  color: #fff;
+  border-radius: 20px;
+  padding: 36px;
+  text-align: center;
+  margin-bottom: 4px;
+}
+.nos-proposito-label {
+  display: inline-block;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  opacity: .75;
+  margin-bottom: 12px;
+}
+.nos-proposito h2 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  line-height: 1.35;
+  margin-bottom: 14px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.nos-proposito p { opacity: .9; font-size: .95rem; line-height: 1.6; }
+
+/* Educación */
+.nos-edu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.nos-edu-card {
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: var(--sombra-card);
+  border-left: 4px solid var(--azul-claro);
+}
+.nos-edu-card.accent-azul  { border-left-color: var(--azul-medio); }
+.nos-edu-card.accent-dorado { border-left-color: var(--dorado); }
+.nos-edu-card h4 { font-size: .95rem; font-weight: 700; color: var(--azul-marino); margin-bottom: 8px; }
+.nos-edu-card p  { font-size: .86rem; color: var(--texto-sec); line-height: 1.55; }
+
+/* Principios */
+.nos-principios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+.nos-principio {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: var(--fondo);
+  border-radius: 10px;
+  padding: 14px;
+  border: 1px solid #E2E8F0;
+}
+.nos-principio > span { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+.nos-principio strong { font-size: .88rem; color: var(--azul-marino); display: block; margin-bottom: 4px; }
+.nos-principio p  { font-size: .8rem; color: var(--texto-sec); line-height: 1.45; margin: 0; }
+
+/* Tarjetas de equipo */
+.nos-team-card {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 28px;
+  background: var(--surface);
+  border-radius: 20px;
+  box-shadow: var(--sombra-card);
+  padding: 28px;
+  margin-bottom: 24px;
+  border: 1px solid #E8EEF8;
+  align-items: start;
+}
+.nos-team-photo-wrap { display: flex; flex-direction: column; gap: 14px; align-items: center; }
+.nos-team-photo {
+  width: 180px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(22,36,90,.15);
+  border: 3px solid var(--azul-claro);
+}
+.nos-team-links { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.nos-link-btn {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: .74rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--trans);
+}
+.nos-link-primary {
+  background: var(--azul-marino);
+  color: #fff;
+}
+.nos-link-primary:hover { background: var(--azul-medio); }
+.nos-link-secondary {
+  background: rgba(217,164,65,.18);
+  color: var(--dorado);
+  border: 1px solid rgba(217,164,65,.35);
+}
+.nos-link-secondary:hover { background: var(--dorado); color: var(--azul-marino); }
+
+.nos-team-bio { display: flex; flex-direction: column; gap: 10px; }
+.nos-team-header { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.nos-team-header h3 { font-size: 1.3rem; font-weight: 800; color: var(--azul-marino); }
+.nos-team-credentials {
+  background: var(--dorado);
+  color: var(--azul-marino);
+  font-size: .72rem;
+  font-weight: 700;
+  padding: 2px 9px;
+  border-radius: 20px;
+}
+.nos-team-role { font-size: .88rem; font-weight: 600; color: var(--azul-medio); }
+.nos-team-summary { font-size: .95rem; font-weight: 600; color: var(--texto); line-height: 1.5; }
+.nos-team-detail p { font-size: .86rem; color: var(--texto-sec); line-height: 1.65; margin-bottom: .7em; }
+.nos-team-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.nos-team-tags span {
+  background: #EFF3FA;
+  color: var(--azul-medio);
+  font-size: .72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid #D8E3F0;
+}
+
+@media (max-width: 640px) {
+  .nos-hero { margin: -20px -16px 24px; padding: 24px 18px; }
+  .nos-hero h1 { font-size: 1.25rem; }
+  .nos-team-card { grid-template-columns: 1fr; }
+  .nos-team-photo { width: 100%; height: 240px; }
+  .nos-enfoque-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 420px) {
+  .nos-enfoque-grid { grid-template-columns: 1fr; }
+}
+
 /* ── Modal cartelera (visibilidad controlada por JS vía style.display) ── */
 #modal-cartelera {
   backdrop-filter: blur(4px);
