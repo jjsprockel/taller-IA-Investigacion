@@ -819,22 +819,9 @@ footer strong { color: #fff; }
   .card-header { padding: 10px 14px; font-size: .85rem; }
 }
 
-/* ── Modal cartelera ── */
+/* ── Modal cartelera (visibilidad controlada por JS vía style.display) ── */
 #modal-cartelera {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(10,18,45,.72);
   backdrop-filter: blur(4px);
-  z-index: 9999;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-#modal-cartelera.visible {
-  display: flex;
-  animation: modal-in .25s ease;
 }
 
 @keyframes modal-in {

@@ -10,7 +10,7 @@
 <body>
 
 <!-- ── Modal cartelera ── -->
-<div id="modal-cartelera" role="dialog" aria-modal="true" aria-label="Cartelera del curso">
+<div id="modal-cartelera" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(10,18,45,.72);align-items:center;justify-content:center;padding:20px" role="dialog" aria-modal="true" aria-label="Cartelera del curso">
   <div id="modal-box">
     <button id="modal-close" aria-label="Cerrar">&times;</button>
     <img src="assets/cartelera.png" alt="Cartelera del curso Introducción a la IA en Investigación en Salud">
@@ -70,16 +70,18 @@
     var modal = document.getElementById('modal-cartelera');
     var closeBtn = document.getElementById('modal-close');
     function cerrar() {
-      modal.classList.remove('visible');
+      modal.style.display = 'none';
       document.body.style.overflow = '';
+    }
+    function abrir() {
+      modal.style.display = 'flex';
+      modal.style.animation = 'modal-in .3s ease';
+      document.body.style.overflow = 'hidden';
     }
     closeBtn.addEventListener('click', cerrar);
     modal.addEventListener('click', function (e) { if (e.target === modal) cerrar(); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') cerrar(); });
-    window.addEventListener('load', function () {
-      modal.classList.add('visible');
-      document.body.style.overflow = 'hidden';
-    });
+    window.addEventListener('load', abrir);
   })();
 </script>
 
