@@ -820,6 +820,91 @@ footer strong { color: #fff; }
 }
 
 /* ════════════════════════════════
+   VISOR DE PRESENTACIONES PDF
+   ════════════════════════════════ */
+
+.pdf-viewer-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  height: calc(100vh - 160px);
+  min-height: 520px;
+}
+
+.pdf-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--azul-marino);
+  border-radius: 10px 10px 0 0;
+  flex-wrap: wrap;
+}
+
+.pdf-title {
+  flex: 1;
+  color: #fff;
+  font-size: .85rem;
+  font-weight: 600;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn-pdf-download,
+.btn-pdf-open {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 13px;
+  border-radius: 20px;
+  font-size: .76rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--trans);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.btn-pdf-download {
+  background: var(--dorado);
+  color: var(--azul-marino);
+}
+.btn-pdf-download:hover { background: #c8932e; }
+
+.btn-pdf-open {
+  background: rgba(255,255,255,.15);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.25);
+}
+.btn-pdf-open:hover { background: rgba(255,255,255,.28); }
+
+.pdf-frame {
+  flex: 1;
+  width: 100%;
+  border: none;
+  background: #525659;
+  min-height: 0;
+}
+
+.pdf-fallback {
+  padding: 8px 14px;
+  font-size: .78rem;
+  color: var(--texto-sec);
+  background: var(--fondo);
+  border-radius: 0 0 10px 10px;
+  border: 1px solid #E2E8F0;
+  border-top: none;
+}
+.pdf-fallback a { color: var(--azul-medio); font-weight: 600; }
+
+@media (max-width: 768px) {
+  .pdf-viewer-wrap { height: calc(100vh - 130px); min-height: 400px; }
+  .pdf-title { font-size: .78rem; }
+}
+
+/* ════════════════════════════════
    NOSOTROS — estilos de la sección
    ════════════════════════════════ */
 

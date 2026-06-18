@@ -3,6 +3,22 @@
    Separación 2A/2B y 3A/3B según instrucciones del prompt principal. */
 
 /* ── Helpers HTML reutilizables ── */
+function tabPresentacion(archivo, titulo) {
+  return {
+    id: archivo.replace('.pdf','') + '-slides',
+    title: 'Presentación',
+    content: `
+<div class="pdf-viewer-wrap">
+  <div class="pdf-toolbar">
+    <span class="pdf-title">${titulo}</span>
+    <a href="assets/presentaciones/${archivo}" download class="btn-pdf-download">⬇ Descargar PDF</a>
+    <a href="assets/presentaciones/${archivo}" target="_blank" rel="noopener" class="btn-pdf-open">↗ Abrir en nueva pestaña</a>
+  </div>
+  <iframe src="assets/presentaciones/${archivo}" class="pdf-frame" title="Presentación ${titulo}"></iframe>
+  <p class="pdf-fallback">Si el visor no carga, <a href="assets/presentaciones/${archivo}" target="_blank">haz clic aquí para abrir el PDF</a>.</p>
+</div>`
+  };
+}
 function tabla(headers, rows) {
   const ths = headers.map(h => `<th>${h}</th>`).join('');
   const trs = rows.map(r => '<tr>' + r.map(c => `<td>${c}</td>`).join('') + '</tr>').join('');
@@ -166,6 +182,7 @@ ${tabla(
   menuTitle: 'Sesión 1 · Del chatbot a la infografía metodológica',
   numLabel: '1',
   tabs: [
+    tabPresentacion('sesion-1.pdf', 'Sesión 1 · Del chatbot a la infografía metodológica'),
     {
       id: 's1-req',
       title: 'Requisitos de la sesión',
@@ -460,6 +477,7 @@ ${card('Tarea posterior sugerida', `
   menuTitle: 'Sesión 2A · NotebookLM para lectura y síntesis',
   numLabel: '2A',
   tabs: [
+    tabPresentacion('sesion-2a.pdf', 'Sesión 2A · NotebookLM para lectura y síntesis basada en fuentes'),
     {
       id: 's2a-req',
       title: 'Requisitos de la sesión',
@@ -652,6 +670,7 @@ ${card('Tarea posterior sugerida', `
   menuTitle: 'Sesión 2B · GPT personalizados y Gems',
   numLabel: '2B',
   tabs: [
+    tabPresentacion('sesion-2b.pdf', 'Sesión 2B · GPT personalizados y Gems'),
     {
       id: 's2b-req',
       title: 'Requisitos de la sesión',
@@ -964,6 +983,7 @@ ${card('Tarea posterior sugerida', `
   menuTitle: 'Sesión 3A · Investigación profunda asistida por IA',
   numLabel: '3A',
   tabs: [
+    tabPresentacion('sesion-3a.pdf', 'Sesión 3A · Investigación profunda asistida por IA'),
     {
       id: 's3a-req',
       title: 'Requisitos de la sesión',
@@ -1219,6 +1239,7 @@ ${card('Tarea posterior sugerida', `
   menuTitle: 'Sesión 3B · Escritura asistida por IA',
   numLabel: '3B',
   tabs: [
+    tabPresentacion('sesion-3b.pdf', 'Sesión 3B · Escritura asistida por IA'),
     {
       id: 's3b-req',
       title: 'Requisitos de la sesión',
@@ -1474,6 +1495,7 @@ ${card('Tarea posterior sugerida', `
   menuTitle: 'Sesión 4 · Análisis de bases de datos con chatbot y Python',
   numLabel: '4',
   tabs: [
+    tabPresentacion('sesion-4.pdf', 'Sesión 4 · Análisis de bases de datos con chatbot y Python'),
     {
       id: 's4-req',
       title: 'Requisitos de la sesión',
