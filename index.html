@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Introducción a la IA con aplicación a la investigación clínica y epidemiológica — Taller FUCS / Laboratorio ProfundaMente">
+  <title>IA en Investigación en Salud — FUCS</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ── Overlay móvil ── -->
+<div id="sidebar-overlay" aria-hidden="true"></div>
+
+<div id="app">
+
+  <!-- ══════════ SIDEBAR ══════════ -->
+  <aside id="sidebar" aria-label="Menú principal del taller">
+    <div class="sidebar-header">
+      <div class="logo-group">
+        <img src="assets/logo-fucs-dark.png" alt="Universidad FUCS" width="140">
+        <hr class="logo-divider">
+        <img src="assets/logo-profundamente-dark.png" alt="Laboratorio ProfundaMente" width="140">
+      </div>
+    </div>
+    <div class="sidebar-title">Taller IA · Investigación en Salud</div>
+    <ul id="nav-menu" role="navigation" aria-label="Sesiones del taller"></ul>
+  </aside>
+
+  <!-- ══════════ CONTENIDO PRINCIPAL ══════════ -->
+  <div id="content">
+
+    <!-- Topbar móvil -->
+    <div id="topbar" role="banner">
+      <button id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="sidebar">
+        <span></span><span></span><span></span>
+      </button>
+      <span class="topbar-title">IA en Investigación en Salud</span>
+    </div>
+
+    <!-- Navegación de pestañas -->
+    <div id="tab-nav-wrapper" role="navigation" aria-label="Bloques de la sesión"></div>
+
+    <!-- Paneles de contenido -->
+    <main id="tab-panels" role="main"></main>
+
+    <!-- Pie de página -->
+    <footer>
+      <strong>John Jaime Sprockel, MD ESP, MSc, MBA</strong> — Director Laboratorio ProfundaMente
+    </footer>
+
+  </div><!-- /content -->
+</div><!-- /app -->
+
+<!-- ══════════ Scripts ══════════ -->
+<script src="js/data.js"></script>
+<script src="js/copy.js"></script>
+<script src="js/progress.js"></script>
+<script src="js/render.js"></script>
+
+</body>
+</html>
