@@ -197,56 +197,55 @@ body {
 
 #tab-nav {
   display: flex;
-  overflow-x: auto;
-  scrollbar-width: thin;
-  scrollbar-color: var(--azul-claro) transparent;
-  padding: 0 16px;
-  gap: 2px;
+  flex-wrap: wrap;
+  padding: 6px 12px 0;
+  gap: 4px 2px;
 }
 
-#tab-nav::-webkit-scrollbar { height: 4px; }
-#tab-nav::-webkit-scrollbar-track { background: transparent; }
-#tab-nav::-webkit-scrollbar-thumb { background: var(--azul-claro); border-radius: 4px; }
-
 .tab-btn {
-  flex-shrink: 0;
+  flex: 0 1 auto;
   border: none;
   background: none;
   cursor: pointer;
-  padding: 12px 14px 10px;
+  padding: 8px 14px 7px;
   font-size: .82rem;
   font-weight: 500;
   color: var(--texto-sec);
   border-bottom: 3px solid transparent;
+  border-radius: 6px 6px 0 0;
   transition: all var(--trans);
   white-space: nowrap;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
+  align-items: center;
+  gap: 7px;
   font-family: inherit;
+  line-height: 1.3;
 }
 
 .tab-btn:hover {
   color: var(--azul-medio);
-  background: rgba(143,169,216,.08);
+  background: rgba(143,169,216,.10);
 }
 
 .tab-btn.active {
   color: var(--azul-marino);
   border-bottom-color: var(--dorado);
+  background: rgba(217,164,65,.07);
   font-weight: 600;
 }
 
 .tab-badge {
-  display: inline-block;
-  background: var(--azul-claro);
+  display: inline-flex;
+  align-items: center;
+  background: rgba(143,169,216,.25);
   color: var(--azul-marino);
-  font-size: .67rem;
+  font-size: .64rem;
   font-weight: 600;
   padding: 2px 7px;
   border-radius: 20px;
   letter-spacing: .02em;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .tab-btn.active .tab-badge {
@@ -783,7 +782,17 @@ footer strong { color: #fff; }
   }
 
   #tab-nav-wrapper {
-    top: 50px;
+    top: 48px;
+  }
+
+  #tab-nav {
+    padding: 4px 8px 0;
+    gap: 3px 1px;
+  }
+
+  .tab-btn {
+    font-size: .78rem;
+    padding: 7px 10px 6px;
   }
 
   #tab-panels {

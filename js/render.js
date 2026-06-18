@@ -83,7 +83,7 @@ function renderTabNav(session) {
   }
   tabNavWrap.style.display = '';
 
-  session.tabs.forEach((tab, i) => {
+  session.tabs.forEach(tab => {
     const btn = document.createElement('button');
     btn.className = 'tab-btn';
     btn.setAttribute('role', 'tab');
@@ -137,8 +137,7 @@ function renderTabPanels(session, requestedTabId) {
       btn.classList.toggle('active', isActive);
       btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
       if (isActive) {
-        // Scroll a tab activo
-        btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        btn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
     });
   }, 0);
