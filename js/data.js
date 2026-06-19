@@ -330,14 +330,81 @@ ${card('Discusión', `
       title: 'Bloque 3. Construcción progresiva del prompt',
       badge: '0:30–0:55 · 25 min',
       content: `
-${card('Objetivo del bloque', `
-<p>Construir un prompt robusto que permita analizar la metodología del artículo seleccionado.</p>
+${card('Marco del prompt efectivo', `
+<p>Un prompt robusto combina seis elementos que llevan a la IA del modo genérico al modo experto. Dominarlos permite obtener respuestas más precisas, verificables y útiles para investigación en salud.</p>
 `, '0:30–0:55')}
-${prompt('Prompt base (deficiente)', '"Explícame la metodología de este artículo."')}
-${prompt('Prompt mejorado', `Actúa como asesor metodológico en investigación en salud. Voy a trabajar con un artículo científico y necesito comprender su metodología para convertirla después en una infografía académica. Extrae los siguientes elementos: objetivo del estudio, diseño metodológico, población, criterios de inclusión y exclusión, muestra, fuente de datos, variables principales, procedimiento, análisis estadístico o cualitativo, consideraciones éticas y principales limitaciones metodológicas. Presenta la respuesta en una tabla clara, usando lenguaje académico pero comprensible para estudiantes de ciencias de la salud.`)}
-${prompt('Prompt avanzado con control de calidad', `Actúa como revisor metodológico. Analiza la sección de métodos de este artículo. No inventes información que no esté explícita. Si un elemento no aparece, escribe "No reportado en el texto disponible". Distingue entre información explícita, inferencias razonables y aspectos que requieren verificación por lectura directa. Organiza la respuesta en una tabla con las columnas: elemento metodológico, información identificada, evidencia textual o sección del artículo, nivel de certeza y observaciones críticas.`, 'maestro')}
+
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:14px;margin:0 0 24px">
+
+<div class="card">
+  <div class="card-header" style="background:#2F7D6E">① Rol</div>
+  <div class="card-body">
+    <p class="pec-q">¿Desde qué perspectiva responde?</p>
+    <p><span class="pec-kw">Para qué sirve:</span> Fija el nivel de experticia y el tono; mejora la pertinencia técnica.</p>
+    <p class="pec-ex"><span class="pec-kw">Ejemplo:</span> "Actúa como asesor metodológico en epidemiología clínica con experiencia en lectura crítica de artículos."</p>
+    <p class="pec-pt"><span class="pec-kw">Plantilla:</span> <em>Actúa como [experto] con experiencia en [área].</em></p>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header" style="background:#3B78B4">② Contexto</div>
+  <div class="card-body">
+    <p class="pec-q">¿Cuál es el material y el propósito?</p>
+    <p><span class="pec-kw">Para qué sirve:</span> Aterriza la respuesta en tu insumo y objetivo reales; evita respuestas genéricas.</p>
+    <p class="pec-ex"><span class="pec-kw">Ejemplo:</span> "Voy a analizar un estudio de cohorte sobre [tema]; mi propósito es preparar un club de revista para residentes."</p>
+    <p class="pec-pt"><span class="pec-kw">Plantilla:</span> <em>Voy a trabajar con [material]. Mi propósito es [objetivo/audiencia].</em></p>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header" style="background:#6C5B97">③ Tarea</div>
+  <div class="card-body">
+    <p class="pec-q">¿Qué debe hacer exactamente?</p>
+    <p><span class="pec-kw">Para qué sirve:</span> Define una acción concreta y medible; un verbo claro elimina la ambigüedad.</p>
+    <p class="pec-ex"><span class="pec-kw">Ejemplo:</span> "Extrae el diseño del estudio, la población, la exposición, el desenlace y el método de análisis."</p>
+    <p class="pec-pt"><span class="pec-kw">Plantilla:</span> <em>Tu tarea es [verbo + objeto concreto].</em></p>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header" style="background:#4F9A48">④ Restricciones</div>
+  <div class="card-body">
+    <p class="pec-q">¿Qué debe evitar o respetar?</p>
+    <p><span class="pec-kw">Para qué sirve:</span> Pone límites de rigor y seguridad; reduce alucinaciones y sesgos.</p>
+    <p class="pec-ex"><span class="pec-kw">Ejemplo:</span> "No inventes datos; si algo no aparece en el texto, escríbelo como 'no reportado' y cita la sección de donde lo tomas."</p>
+    <p class="pec-pt"><span class="pec-kw">Plantilla:</span> <em>No [acción prohibida]. Si [condición], entonces [qué hacer].</em></p>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header" style="background:#D98A2A">⑤ Formato</div>
+  <div class="card-body">
+    <p class="pec-q">¿Cómo debe entregar la respuesta?</p>
+    <p><span class="pec-kw">Para qué sirve:</span> Hace la salida usable y comparable; facilita revisar y reutilizar.</p>
+    <p class="pec-ex"><span class="pec-kw">Ejemplo:</span> "Devuélvelo en una tabla con columnas: Elemento | Hallazgo | Nivel de certeza (alto/medio/bajo) | Cita."</p>
+    <p class="pec-pt"><span class="pec-kw">Plantilla:</span> <em>Entrega el resultado como [formato] con [campos/estructura].</em></p>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header" style="background:#16345B">⑥ Iteración</div>
+  <div class="card-body">
+    <p class="pec-q">¿Cómo se mejora la respuesta?</p>
+    <p><span class="pec-kw">Para qué sirve:</span> Recuerda que el prompt es un punto de partida que se refina con repreguntas.</p>
+    <p class="pec-ex"><span class="pec-kw">Ejemplo:</span> "Al final, señala qué datos debo verificar en el artículo original y propón 2 preguntas para profundizar."</p>
+    <p class="pec-pt"><span class="pec-kw">Plantilla:</span> <em>Indica qué debo verificar y sugiere cómo afinar la consulta.</em></p>
+  </div>
+</div>
+
+</div>
+
+<div class="prompt-block prompt-anotado" data-copy-init="1">
+  <div class="prompt-label">Prompt anotado · para ver la correspondencia de elementos</div>
+  <div class="prompt-text">Actúa como <strong style="color:#2F7D6E">asesor metodológico en epidemiología clínica</strong>&nbsp;<span class="pec-tag" style="background:#2F7D6E">ROL</span>. Voy a analizar el artículo adjunto, un <strong style="color:#3B78B4">estudio de cohorte sobre [tema]</strong>, y mi propósito es <strong style="color:#3B78B4">preparar un club de revista para residentes</strong>&nbsp;<span class="pec-tag" style="background:#3B78B4">CONTEXTO</span>. Tu tarea es <strong style="color:#6C5B97">extraer el diseño del estudio, la población, la exposición, el desenlace y el método de análisis</strong>&nbsp;<span class="pec-tag" style="background:#6C5B97">TAREA</span>. <strong style="color:#4F9A48">No inventes información: si un dato no aparece, escríbelo como "no reportado" y cita la sección de donde lo tomas</strong>&nbsp;<span class="pec-tag" style="background:#4F9A48">RESTRICCIONES</span>. Entrega el resultado en una <strong style="color:#D98A2A">tabla con las columnas Elemento | Hallazgo | Nivel de certeza | Cita</strong>&nbsp;<span class="pec-tag" style="background:#D98A2A">FORMATO</span>. Al final, <strong style="color:#16345B">señala qué debo verificar en el texto original y sugiere 2 preguntas para profundizar</strong>&nbsp;<span class="pec-tag" style="background:#16345B">ITERACIÓN</span>.</div>
+</div>
+${prompt('Prompt armado de ejemplo · listo para usar', `Actúa como asesor metodológico en epidemiología clínica. Voy a analizar el artículo adjunto, un estudio de cohorte sobre [tema], y mi propósito es preparar un club de revista para residentes. Tu tarea es extraer el diseño del estudio, la población, la exposición, el desenlace y el método de análisis. No inventes información: si un dato no aparece, escríbelo como "no reportado" y cita la sección de donde lo tomas. Entrega el resultado en una tabla con las columnas: Elemento | Hallazgo | Nivel de certeza | Cita. Al final, señala qué debo verificar en el texto original y sugiere 2 preguntas para profundizar.`, 'maestro')}
 <div class="info-section dorado">
-  <strong>Producto del bloque:</strong> Cada estudiante debe obtener su <strong>prompt maestro de extracción metodológica</strong>.
+  <strong>Producto del bloque:</strong> Cada estudiante construye su propio <strong>prompt maestro de extracción metodológica</strong> adaptado a su artículo.
 </div>
 `
     },

@@ -1418,6 +1418,55 @@ footer strong { color: #fff; }
 }
 
 /* ══════════════════════════════════════════════
+   26b. ELEMENTOS DEL PROMPT (Sesión 1 · Bloque 3)
+   ══════════════════════════════════════════════ */
+.pec-q {
+  color: var(--texto-sec);
+  font-style: italic;
+  font-size: .84rem;
+  margin-bottom: 8px;
+}
+.pec-kw { font-weight: 700; color: var(--texto); }
+.pec-ex {
+  background: rgba(22,36,90,.04);
+  border: 1px solid rgba(22,36,90,.07);
+  border-radius: var(--r-sm);
+  padding: 7px 10px;
+  font-size: .82rem;
+  margin: 8px 0 6px;
+}
+.pec-pt {
+  background: rgba(217,164,65,.09);
+  border: 1px solid rgba(217,164,65,.18);
+  border-radius: var(--r-sm);
+  padding: 6px 10px;
+  font-size: .81rem;
+  font-style: italic;
+  color: #7A5410;
+}
+.pec-tag {
+  display: inline-block;
+  color: #fff;
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .07em;
+  padding: 2px 6px;
+  border-radius: 10px;
+  vertical-align: middle;
+  line-height: 1.3;
+}
+/* Bloque anotado (sin botón Copiar; controlado por data-copy-init="1") */
+.prompt-anotado {
+  border-left-color: #6C5B97;
+  background: #F5F2FA;
+}
+.prompt-anotado .prompt-label {
+  color: #5B4A82;
+  background: rgba(108,91,151,.08);
+  border-bottom-color: rgba(108,91,151,.14);
+}
+
+/* ══════════════════════════════════════════════
    27. MOVIMIENTO REDUCIDO
    ══════════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {
