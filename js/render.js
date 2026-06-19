@@ -163,9 +163,9 @@ function renderTabPanels(session, requestedTabId) {
 }
 
 function afterPanelActivated() {
-  // Inicializar funcionalidades interactivas en los paneles activos
   initCopyButtons();
   initChecklists();
+  if (typeof Prism !== 'undefined') Prism.highlightAll();
 }
 
 /* ─── Sidebar activo ─── */

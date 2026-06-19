@@ -28,7 +28,33 @@ function prompt(label, texto, clase) {
   return `<div class="prompt-block${clase ? ' ' + clase : ''}"><div class="prompt-label">${label}</div><div class="prompt-text">${texto}</div></div>`;
 }
 function codigo(lang, texto) {
-  return `<div class="code-block"><div class="code-header">${lang}</div><pre>${texto}</pre></div>`;
+  const cls = /python/i.test(lang) ? ' class="language-python"' : '';
+  return `<div class="code-block"><div class="code-header">${lang}</div><pre><code${cls}>${texto}</code></pre></div>`;
+}
+function sessionGrid() {
+  const sesiones = [
+    { num:'1',  id:'sesion-1',  nombre:'Del chatbot a la infografía metodológica', desc:'Prompts, extracción metodológica y visualización de artículos científicos.' },
+    { num:'2A', id:'sesion-2a', nombre:'NotebookLM para lectura y síntesis', desc:'Consultas referenciadas, síntesis y producción de recursos de estudio.' },
+    { num:'2B', id:'sesion-2b', nombre:'GPT personalizados y Gems', desc:'Diseño de asistentes académicos para tareas repetitivas en investigación.' },
+    { num:'3A', id:'sesion-3a', nombre:'Investigación profunda asistida por IA', desc:'Exploración documentada de evidencia con evaluación crítica de fuentes.' },
+    { num:'3B', id:'sesion-3b', nombre:'Escritura asistida por IA', desc:'Redacción, revisión y adaptación de textos académicos con IA.' },
+    { num:'4',  id:'sesion-4',  nombre:'Análisis de bases de datos con Python', desc:'Análisis reproducible en Colab: descriptivos, modelos y evaluación crítica.' },
+  ];
+  const cards = sesiones.map(s =>
+    `<a href="#/${s.id}" class="session-grid-card">
+      <span class="sgc-num">${s.num}</span>
+      <div class="sgc-body"><strong>${s.nombre}</strong><p>${s.desc}</p></div>
+      <span class="sgc-arrow">→</span>
+    </a>`).join('');
+  return `
+<div class="session-grid-section">
+  <h2 class="session-grid-title">Sesiones del taller</h2>
+  <div class="session-grid">${cards}</div>
+  <div class="session-grid-actions">
+    <a href="#/requisitos" class="btn-action-primary">Ver requisitos e instrucciones</a>
+    <a href="#/sesion-1" class="btn-action-secondary">Ir a Sesión 1 →</a>
+  </div>
+</div>`;
 }
 function checklist(key, items) {
   const lis = items.map(it => `<li class="checklist-item"><input type="checkbox"><label>${it}</label></li>`).join('');
@@ -68,6 +94,8 @@ const APP_DATA = {
   <h1>Introducción a la IA con aplicación a la investigación clínica y epidemiológica</h1>
   <p>Taller práctico en sesiones guiadas · Programa GLORIA · FUCS / Laboratorio ProfundaMente</p>
 </div>
+
+${sessionGrid()}
 
 ${card('Presentación general y propósito central', `
 <p>Este taller consolida la planeación pedagógica completa de aplicaciones prácticas de la IA en investigación en salud, estructurado en cuatro sesiones prácticas. Se orienta a desarrollar competencias aplicadas en el uso crítico, transparente y reproducible de herramientas de inteligencia artificial generativa en investigación, docencia y comunicación académica en ciencias de la salud.</p>
