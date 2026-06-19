@@ -2193,21 +2193,6 @@ ${card('Recomendación pedagógica', `
 </div>
 
 <div class="nos-section" style="margin-top:24px">
-  <h3 class="nos-subsection-title">Líneas formativas del laboratorio</h3>
-  ${tabla(
-    ['Línea','Descripción','Herramientas y métodos'],
-    [
-      ['Interacción con chatbots y prompts','Diseño estratégico de instrucciones para tareas académicas e investigativas','ChatGPT, Gemini, técnicas de prompting estructurado'],
-      ['Lectura y síntesis basada en fuentes','Análisis documental asistido por IA con trazabilidad de fuentes','NotebookLM, flujos de extracción documental'],
-      ['Asistentes académicos personalizados','Diseño de GPTs y Gems para automatizar flujos repetitivos en salud','GPT Store, Gemini Gems, metaprompts'],
-      ['Investigación profunda asistida','Exploración documentada de evidencia con evaluación crítica de fuentes','Deep Research, matrices de análisis crítico'],
-      ['Escritura académica asistida','Planificación, redacción, revisión y adaptación de textos científicos','Canvas, flujos de revisión iterativa'],
-      ['Ciencia de datos reproducible','Análisis de bases de datos en salud con Python en entornos colaborativos','Google Colab, scikit-learn, XGBoost, LightGBM'],
-    ]
-  )}
-</div>
-
-<div class="nos-section" style="margin-top:24px">
   <h3 class="nos-subsection-title">Principios transversales de formación</h3>
   <div class="nos-principios-grid">
     <div class="nos-principio"><span>🎯</span><div><strong>Verificación humana</strong><p>Toda salida de IA debe contrastarse con fuentes, datos o criterios metodológicos.</p></div></div>
