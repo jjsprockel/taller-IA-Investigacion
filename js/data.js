@@ -323,6 +323,17 @@ ${card('Discusión', `
   <li>La verificación posterior por parte del estudiante.</li>
 </ul>
 `)}
+${card('Ruta de primeros pasos · checklist de exploración', checklist('sesion-1-bloque-2', [
+  '<strong>Acceso y cuenta.</strong> Registrarse e iniciar sesión; diferenciar <strong>plan gratuito</strong> y <strong>plan de pago</strong> (varias funciones dependen del plan).',
+  '<strong>Anatomía de la interfaz.</strong> Reconocer la <strong>caja de entrada del mensaje (prompt)</strong>, el botón de envío, el área de respuesta y la <strong>barra lateral con el historial</strong>.',
+  '<strong>Selección de modelo.</strong> Usar el <strong>selector de modelo</strong>; entender qué es un <strong>modelo</strong>, las diferencias entre modelos <strong>rápidos</strong> y de <strong>razonamiento</strong>, y el concepto de <strong>ventana de contexto</strong>; saber cuándo elegir cada uno.',
+  '<strong>La caja de instrucciones (el prompt).</strong> Escribir el prompt, <strong>adjuntar archivos</strong> (PDF, imágenes, hojas de cálculo), usar la <strong>entrada por voz</strong> y aprovechar la <strong>multimodalidad</strong>.',
+  '<strong>Personalización / instrucciones personalizadas.</strong> Configurar <strong>quién es el usuario y cómo desea las respuestas</strong> mediante las <strong>instrucciones personalizadas (custom instructions)</strong>.',
+  '<strong>Memoria (memory).</strong> Activar, revisar y borrar la <strong>memoria</strong> que recuerda datos entre conversaciones; distinguirla de las instrucciones personalizadas.',
+  '<strong>Funcionalidades y herramientas.</strong> Identificar y activar: <strong>búsqueda web</strong>, <strong>análisis de datos / intérprete de código</strong>, <strong>generación de imágenes</strong>, <strong>lienzo (Canvas)</strong>, <strong>investigación profunda (Deep Research)</strong> y <strong>modo de voz</strong>.',
+  '<strong>Gestión de conversaciones.</strong> Manejar <strong>hilos</strong>, renombrarlos, organizarlos en <strong>proyectos/carpetas</strong>, <strong>compartir</strong>, <strong>archivar/eliminar</strong> y usar <strong>chats temporales</strong>.',
+  '<strong>Privacidad y uso responsable en salud.</strong> Revisar los <strong>controles de datos y entrenamiento</strong>, <strong>no ingresar datos identificables de pacientes (PHI)</strong> y <strong>verificar las respuestas</strong> (riesgo de <strong>alucinaciones</strong>), pidiendo que <strong>cite sus fuentes</strong>.',
+]))}
 `
     },
     {
@@ -556,6 +567,104 @@ ${card('Tarea posterior sugerida', `
   <li>Comentario crítico de máximo 150 palabras sobre qué corrigió manualmente después de usar IA.</li>
 </ol>
 `)}
+`
+    },
+    {
+      id: 's1-glosario',
+      title: 'Glosario',
+      content: `
+<div class="glos-search-wrap">
+  <input type="text" id="glosario-search" class="glos-search" placeholder="Buscar término o definición…" aria-label="Buscar en el glosario">
+  <span id="glosario-count" class="glos-count"></span>
+</div>
+<div class="glosario-content">
+${card('A · Inteligencia artificial y modelos', tabla(
+  ['Término','Definición'],
+  [
+    ['<strong>Inteligencia artificial (IA)</strong>','Campo que desarrolla sistemas capaces de realizar tareas que normalmente requieren inteligencia humana.'],
+    ['<strong>IA generativa</strong>','IA que crea contenido nuevo (texto, imágenes, código) a partir de instrucciones.'],
+    ['<strong>Modelo de lenguaje grande (LLM)</strong>','Modelo entrenado con enormes cantidades de texto que predice y genera lenguaje; es la base de los chatbots.'],
+    ['<strong>Modelo</strong>','El "motor" concreto que genera las respuestas; cada plataforma ofrece varias versiones.'],
+    ['<strong>Modelo de razonamiento</strong>','Variante que dedica más cómputo a "pensar" paso a paso antes de responder; mejor para problemas complejos, más lenta.'],
+    ['<strong>Token</strong>','Unidad mínima de texto (un fragmento de palabra) con la que el modelo procesa y mide la información.'],
+    ['<strong>Ventana de contexto</strong>','Cantidad máxima de tokens que el modelo puede tener presente a la vez en una conversación.'],
+    ['<strong>Corte de conocimiento</strong>','Fecha hasta la cual el modelo fue entrenado; no conoce hechos posteriores salvo que use búsqueda web.'],
+    ['<strong>Alucinación</strong>','Respuesta plausible pero falsa o inventada; obliga a verificar.'],
+    ['<strong>Sesgo algorítmico</strong>','Tendencia sistemática del modelo a reproducir prejuicios presentes en sus datos de entrenamiento.'],
+  ]
+))}
+${card('B · Chatbot e interacción', tabla(
+  ['Término','Definición'],
+  [
+    ['<strong>Chatbot / asistente conversacional</strong>','Interfaz que permite dialogar con un modelo mediante mensajes.'],
+    ['<strong>Prompt</strong>','Instrucción o mensaje que el usuario escribe para guiar la respuesta.'],
+    ['<strong>Conversación / hilo (thread)</strong>','Secuencia continua de mensajes; el modelo recuerda lo dicho dentro de ella.'],
+    ['<strong>Multimodalidad</strong>','Capacidad de procesar a la vez texto, imágenes y documentos.'],
+    ['<strong>Modo de voz</strong>','Interacción hablada con el chatbot.'],
+    ['<strong>Plan gratuito / de pago</strong>','Niveles de acceso; el de pago habilita modelos y funciones avanzadas.'],
+  ]
+))}
+${card('C · Personalización y memoria', tabla(
+  ['Término','Definición'],
+  [
+    ['<strong>Instrucciones personalizadas (custom instructions)</strong>','Preferencias persistentes sobre el usuario y el estilo de respuesta, aplicadas a todas las conversaciones.'],
+    ['<strong>Personalización (perfil)</strong>','Ajustes que definen quién es el usuario y cómo quiere las respuestas.'],
+    ['<strong>Memoria (memory)</strong>','Función que recuerda datos y preferencias entre conversaciones distintas.'],
+  ]
+))}
+${card('D · Construcción del prompt (Rol · Contexto · Tarea · Restricciones · Formato · Iteración)', tabla(
+  ['Término','Definición'],
+  [
+    ['<strong>Rol</strong>','Perspectiva o experticia que se le pide adoptar al modelo.'],
+    ['<strong>Contexto</strong>','Material y propósito que enmarcan la consulta.'],
+    ['<strong>Tarea</strong>','Acción concreta que debe ejecutar el modelo.'],
+    ['<strong>Restricciones</strong>','Límites de lo que el modelo debe evitar o respetar.'],
+    ['<strong>Formato</strong>','Estructura en la que debe entregar la respuesta.'],
+    ['<strong>Iteración</strong>','Refinamiento de la respuesta mediante repreguntas.'],
+    ['<strong>Prompt maestro / plantilla</strong>','Prompt reutilizable con campos a completar.'],
+    ['<strong>Ejemplos (few-shot)</strong>','Incluir uno o varios ejemplos dentro del prompt para guiar el estilo o el formato de la respuesta.'],
+  ]
+))}
+${card('E · Herramientas, organización y formatos de salida', tabla(
+  ['Término','Definición'],
+  [
+    ['<strong>Herramientas</strong>','Capacidades adicionales que el chatbot puede usar más allá de generar texto.'],
+    ['<strong>Búsqueda web</strong>','Herramienta que consulta internet para dar información actualizada y citable.'],
+    ['<strong>Análisis de datos / intérprete de código</strong>','Herramienta que ejecuta código (p. ej. Python) para analizar archivos y datos.'],
+    ['<strong>Generación de imágenes</strong>','Creación de imágenes a partir de una descripción textual.'],
+    ['<strong>Lienzo (Canvas)</strong>','Espacio de edición lado a lado para redactar y revisar documentos o código de forma iterativa.'],
+    ['<strong>Investigación profunda (Deep Research)</strong>','Función que realiza búsquedas extensas y multi-fuente y entrega un informe sintetizado.'],
+    ['<strong>Proyectos / carpetas</strong>','Espacios para agrupar conversaciones y archivos relacionados, con instrucciones comunes.'],
+    ['<strong>Biblioteca</strong>','Repositorio donde se guardan recursos generados (p. ej. imágenes) para reutilizarlos.'],
+    ['<strong>Habilidades (Skills)</strong>','Conjuntos de instrucciones y recursos que extienden lo que el asistente sabe hacer en tareas específicas.'],
+    ['<strong>Resumen estructurado / tabla / esquema</strong>','Formatos de salida que organizan la información para revisarla y reutilizarla.'],
+    ['<strong>Markdown</strong>','Sintaxis simple de formato (encabezados, listas, tablas) que los chatbots usan para estructurar el texto.'],
+    ['<strong>Infografía metodológica</strong>','Representación visual que sintetiza el diseño y los componentes clave de un estudio.'],
+  ]
+))}
+${card('F · Lectura crítica y extracción metodológica', tabla(
+  ['Término','Definición'],
+  [
+    ['<strong>Diseño del estudio</strong>','Estructura metodológica de una investigación (p. ej. cohorte, casos y controles, ensayo clínico).'],
+    ['<strong>Población / muestra</strong>','Conjunto de sujetos estudiados y el subconjunto efectivamente analizado.'],
+    ['<strong>Exposición</strong>','Factor cuyo efecto se evalúa.'],
+    ['<strong>Desenlace (outcome)</strong>','Resultado que se mide para responder la pregunta de investigación.'],
+    ['<strong>Método de análisis</strong>','Técnicas estadísticas empleadas para procesar los datos.'],
+    ['<strong>Nivel de certeza</strong>','Grado de confianza en un hallazgo según la evidencia que lo respalda.'],
+  ]
+))}
+${card('G · Ética, privacidad y verificación', tabla(
+  ['Término','Definición'],
+  [
+    ['<strong>Datos de salud identificables (PHI)</strong>','Información que permite identificar a un paciente; no debe ingresarse al chatbot.'],
+    ['<strong>Anonimización / desidentificación</strong>','Eliminar o enmascarar los datos que identifican a una persona antes de compartir información.'],
+    ['<strong>Verificación (fact-checking)</strong>','Comprobar la exactitud de las respuestas contra fuentes confiables.'],
+    ['<strong>Citación de fuentes</strong>','Pedir y revisar las referencias en las que se basa una respuesta.'],
+    ['<strong>Controles de datos y entrenamiento</strong>','Ajustes de privacidad que determinan si las conversaciones se usan para entrenar el modelo.'],
+    ['<strong>Chats temporales</strong>','Conversaciones que no se guardan en el historial ni en la memoria.'],
+  ]
+))}
+</div>
 `
     }
   ]

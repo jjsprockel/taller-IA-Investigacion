@@ -166,6 +166,40 @@ function afterPanelActivated() {
   initCopyButtons();
   initChecklists();
   if (typeof Prism !== 'undefined') Prism.highlightAll();
+  initGlosario();
+}
+
+function initGlosario() {
+  const input = document.getElementById('glosario-search');
+  if (!input || input.dataset.glInit) return;
+  input.dataset.glInit = '1';
+  const countEl = document.getElementById('glosario-count');
+
+  function getRows() {
+    return document.querySelectorAll('.glosario-content tbody tr');
+  }
+
+  function updateCount(visible, total) {
+    if (!countEl) return;
+    countEl.textContent = visible < total
+      ? visible + ' de ' + total + ' términos'
+      : total + ' términos';
+  }
+
+  const allRows = getRows();
+  updateCount(allRows.length, allRows.length);
+
+  input.addEventListener('input', function () {
+    const q = this.value.toLowerCase().trim();
+    let visible = 0;
+    const rows = getRows();
+    rows.forEach(function (tr) {
+      const match = !q || tr.textContent.toLowerCase().includes(q);
+      tr.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+    updateCount(visible, rows.length);
+  });
 }
 
 /* ─── Sidebar activo ─── */
