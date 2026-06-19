@@ -210,7 +210,6 @@ ${tabla(
   menuTitle: 'Sesión 1 · Del chatbot a la infografía metodológica',
   numLabel: '1',
   tabs: [
-    tabPresentacion('sesion-1.pdf', 'Sesión 1 · Del chatbot a la infografía metodológica'),
     {
       id: 's1-req',
       title: 'Requisitos de la sesión',
@@ -288,22 +287,18 @@ ${card('Estructura de la sesión', tabla(
       title: 'Bloque 1. Presentación inicial',
       badge: '0:00–0:15 · 15 min',
       content: `
+<div class="pdf-viewer-wrap">
+  <div class="pdf-toolbar">
+    <span class="pdf-title">Sesión 1 · Del chatbot a la infografía metodológica</span>
+    <a href="assets/presentaciones/sesion-1.pdf" download class="btn-pdf-download">⬇ Descargar PDF</a>
+    <a href="assets/presentaciones/sesion-1.pdf" target="_blank" rel="noopener" class="btn-pdf-open">↗ Abrir en nueva pestaña</a>
+  </div>
+  <iframe src="assets/presentaciones/sesion-1.pdf" class="pdf-frame" title="Presentación Sesión 1"></iframe>
+  <p class="pdf-fallback">Si el visor no carga, <a href="assets/presentaciones/sesion-1.pdf" target="_blank">haz clic aquí para abrir el PDF</a>.</p>
+</div>
 ${card('Propósito', `
 <p>Dar un marco conceptual breve sobre cómo la IA generativa puede apoyar tareas reales de investigación en salud, especialmente la lectura, organización y comunicación visual de artículos científicos.</p>
 `, '0:00–0:15')}
-${card('Estructura sugerida de la presentación', tabla(
-  ['Diapositiva','Tema','Mensaje central'],
-  [
-    ['1','Título de la sesión','La IA como asistente para comprender y comunicar investigación'],
-    ['2','De chatbot a colaborador académico','La IA no solo responde preguntas; ayuda a estructurar procesos'],
-    ['3','Qué puede hacer en investigación','Resumir, comparar, organizar, criticar, transformar y visualizar'],
-    ['4','Qué no debe hacer sola','No reemplaza lectura crítica, verificación ni juicio experto'],
-    ['5','La importancia del contexto','Un buen prompt depende del objetivo, audiencia, artículo y formato'],
-    ['6','Progresión de tareas','De una pregunta simple a una infografía metodológica'],
-    ['7','Riesgos frecuentes','Alucinaciones, errores metodológicos, simplificación excesiva'],
-    ['8','Producto de la sesión','Cada estudiante trabajará con su propio artículo'],
-  ]
-))}
 `
     },
     {
