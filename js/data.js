@@ -483,6 +483,37 @@ ${card('Aplicaciones prácticas', tabla(
     ['Skills','Automatizar tareas repetitivas, como extracción metodológica o creación de fichas de artículos'],
   ]
 ))}
+${card('Checklist de exploración por herramienta', `
+<div class="checklist-container" data-key="sesion-1-bloque-6">
+  <div class="checklist-header">
+    <span class="checklist-progress">0 / 15 completados</span>
+    <button class="btn-reset-checklist">Reiniciar</button>
+  </div>
+  <div class="progress-bar-wrap"><div class="progress-bar" style="width:0%"></div></div>
+  <ul class="checklist-items">
+    <li class="checklist-group-hdr">Hilo o conversación <span class="checklist-group-desc">— mantener el trabajo de un artículo o tema específico</span></li>
+    <li class="checklist-item"><input type="checkbox"><label>Crear una conversación nueva dedicada a un solo artículo y renombrarla con un título claro (p. ej. "Cohorte – [tema]").</label></li>
+    <li class="checklist-item"><input type="checkbox"><label>Continuar el análisis dentro del mismo hilo para que el modelo conserve el contexto del artículo.</label></li>
+    <li class="checklist-item"><input type="checkbox"><label>Recuperar un hilo anterior desde el historial y retomar el trabajo.</label></li>
+    <li class="checklist-group-hdr">Biblioteca <span class="checklist-group-desc">— recuperar documentos cargados y reutilizarlos</span></li>
+    <li class="checklist-item"><input type="checkbox"><label>Cargar el PDF del artículo en la conversación.</label></li>
+    <li class="checklist-item"><input type="checkbox"><label>Comprobar que el documento queda guardado y accesible para reutilizarlo después.</label></li>
+    <li class="checklist-item"><input type="checkbox"><label>Reutilizar un documento ya cargado en una nueva consulta sin volver a subirlo.</label></li>
+    <li class="checklist-group-hdr">Proyecto <span class="checklist-group-desc">— agrupar artículos, instrucciones y productos sobre una línea de investigación</span></li>
+    <li class="checklist-item"><input type="checkbox"><label>Crear un proyecto (o carpeta) para una línea de investigación.</label></li>
+    <li class="checklist-item"><input type="checkbox"><label>Definir instrucciones del proyecto (rol y formato por defecto) que apliquen a todas sus conversaciones.</label></li>
+    <li class="checklist-item"><input type="checkbox"><label>Organizar dentro del proyecto las conversaciones y archivos relacionados.</label></li>
+    <li class="checklist-group-hdr">Canvas <span class="checklist-group-desc">— redactar o editar una ficha metodológica, protocolo o resumen largo</span></li>
+    <li class="checklist-item"><input type="checkbox"><label>Abrir un lienzo (Canvas) y generar un primer borrador de ficha metodológica.</label></li>
+    <li class="checklist-item"><input type="checkbox"><label>Editar una sección concreta dentro del Canvas (acortar, añadir una tabla, precisar un término).</label></li>
+    <li class="checklist-item"><input type="checkbox"><label>Refinar el documento de forma iterativa conservando las versiones previas.</label></li>
+    <li class="checklist-group-hdr">Skills <span class="checklist-group-desc">— automatizar tareas repetitivas, como extracción metodológica o creación de fichas</span></li>
+    <li class="checklist-item"><input type="checkbox"><label>Identificar una tarea repetitiva del taller candidata a automatizar (p. ej. extracción metodológica o creación de fichas).</label></li>
+    <li class="checklist-item"><input type="checkbox"><label>Localizar dónde se configuran o activan las habilidades (Skills) en la plataforma.</label></li>
+    <li class="checklist-item"><input type="checkbox"><label>Probar una habilidad para generar la ficha de un artículo y revisar el resultado.</label></li>
+  </ul>
+</div>
+`)}
 ${card('Ejercicio breve', `
 <p>Cada estudiante formula una instrucción para continuidad:</p>
 ${prompt('Prompt de continuidad', '"En este proyecto, cada vez que cargue un artículo, quiero que primero extraigas la metodología, luego identifiques fortalezas y limitaciones, y finalmente propongas un prompt para una infografía académica."')}
