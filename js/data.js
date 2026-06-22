@@ -787,6 +787,10 @@ ${card('Ejemplos de nombres de cuaderno', tabla(
 ))}
 ${prompt('Prompt inicial sugerido', `Actúa como asistente académico. A partir de las fuentes que cargaré en este cuaderno, ayúdame a organizar el tema central, los conceptos clave y los posibles productos de estudio o investigación que puedo generar.`)}
 <div class="info-section"><strong>Producto esperado:</strong> Cuaderno creado, nombrado y orientado a un propósito académico específico.</div>
+${card('Tareas de este bloque', checklist('sesion-2a-b1', [
+  'Entrar a NotebookLM con la cuenta de Google y crear un cuaderno nuevo.',
+  'Nombrar el cuaderno según el artículo o tema de trabajo.',
+]))}
 `
     },
     {
@@ -805,6 +809,10 @@ ${card('Actividades', `
 `, '0:15–0:30')}
 ${prompt('Prompt para primera síntesis', `Resume brevemente cada fuente cargada. Indica el tema central, el tipo de documento, su posible utilidad académica y las preguntas que podría responder.`)}
 <div class="info-section"><strong>Producto esperado:</strong> Cuaderno con al menos dos fuentes cargadas y una primera síntesis de su contenido.</div>
+${card('Tareas de este bloque', checklist('sesion-2a-b2', [
+  'Cargar el artículo en PDF (y, si aplica, 1–2 fuentes complementarias) como fuentes del cuaderno.',
+  'Confirmar que NotebookLM procesó las fuentes y muestra el resumen automático.',
+]))}
 `
     },
     {
@@ -831,6 +839,10 @@ ${card('Énfasis metodológico', `
 </ol>
 `)}
 ${prompt('Prompt de control de calidad', `Responde únicamente con base en las fuentes cargadas. Para cada afirmación importante, indica la fuente correspondiente. Si la información no está disponible, escribe: "No identificado en las fuentes cargadas".`, 'maestro')}
+${card('Tareas de este bloque', checklist('sesion-2a-b3', [
+  'Preguntar por la metodología del artículo y verificar que la respuesta incluye citas a las fuentes.',
+  'Abrir una cita para comprobar el fragmento original que la respalda.',
+]))}
 `
     },
     {
@@ -858,6 +870,10 @@ ${prompt('Mapa mental', `Genera un mapa mental del tema central. Organiza concep
 ${prompt('Tarjetas didácticas', `Genera tarjetas didácticas con pregunta breve y respuesta precisa. Prioriza conceptos clave, definiciones, criterios, hallazgos y limitaciones.`)}
 ${prompt('Cuestionario', `Crea un cuestionario de diez preguntas de selección múltiple. Incluye respuesta correcta, explicación breve y sustento en las fuentes.`)}
 ${prompt('Infografía', `Genera una infografía académica basada en las fuentes. Organiza la información en cinco bloques: contexto, problema, evidencia principal, aplicaciones en salud y limitaciones.`)}
+${card('Tareas de este bloque', checklist('sesion-2a-b4', [
+  'Generar al menos un producto de estudio (guía, preguntas frecuentes o resumen en audio).',
+  'Revisar críticamente el producto frente a las fuentes (detectar omisiones o imprecisiones).',
+]))}
 `
     },
     {
@@ -874,35 +890,6 @@ ${checklist('s2a-productos', [
   'Al menos dos productos generados (informe, tabla, mapa, cuestionario, presentación o infografía)',
   'Revisión crítica: verificación de fidelidad a las fuentes',
 ])}
-`)}
-`
-    },
-    {
-      id: 's2a-checklist',
-      title: 'Checklist de la sesión',
-      content: `
-${card('Checklist de actividades · NotebookLM', `
-<div class="checklist-container" data-key="sesion-2a">
-  <div class="checklist-header">
-    <span class="checklist-progress">0 / 8 completados</span>
-    <button class="btn-reset-checklist">Reiniciar</button>
-  </div>
-  <div class="progress-bar-wrap"><div class="progress-bar" style="width:0%"></div></div>
-  <ul class="checklist-items">
-    <li class="checklist-group-hdr">Bloque 1. Acceso y creación del cuaderno</li>
-    <li class="checklist-item"><input type="checkbox"><label>Entrar a NotebookLM con la cuenta de Google y crear un cuaderno nuevo.</label></li>
-    <li class="checklist-item"><input type="checkbox"><label>Nombrar el cuaderno según el artículo o tema de trabajo.</label></li>
-    <li class="checklist-group-hdr">Bloque 2. Carga y búsqueda de documentos</li>
-    <li class="checklist-item"><input type="checkbox"><label>Cargar el artículo en PDF (y, si aplica, 1–2 fuentes complementarias) como fuentes del cuaderno.</label></li>
-    <li class="checklist-item"><input type="checkbox"><label>Confirmar que NotebookLM procesó las fuentes y muestra el resumen automático.</label></li>
-    <li class="checklist-group-hdr">Bloque 3. Chat y referenciación</li>
-    <li class="checklist-item"><input type="checkbox"><label>Preguntar por la metodología del artículo y verificar que la respuesta incluye citas a las fuentes.</label></li>
-    <li class="checklist-item"><input type="checkbox"><label>Abrir una cita para comprobar el fragmento original que la respalda.</label></li>
-    <li class="checklist-group-hdr">Bloque 4. Productos de estudio</li>
-    <li class="checklist-item"><input type="checkbox"><label>Generar al menos un producto de estudio (guía, preguntas frecuentes o resumen en audio).</label></li>
-    <li class="checklist-item"><input type="checkbox"><label>Revisar críticamente el producto frente a las fuentes (detectar omisiones o imprecisiones).</label></li>
-  </ul>
-</div>
 `)}
 `
     },
@@ -998,6 +985,9 @@ ${card('Opción B. Gemini', `
 </ol>
 `)}
 <div class="info-section"><strong>Producto esperado:</strong> Cada estudiante habrá seleccionado la plataforma con la que trabajará.</div>
+${card('Tareas de este bloque', checklist('sesion-2b-b1', [
+  'Acceder a la sección de creación de GPTs (ChatGPT) o Gems (Gemini).',
+]))}
 `
     },
     {
@@ -1031,6 +1021,9 @@ ${card('Ejemplos de asistentes para crear', tabla(
     ['Asistente de análisis de datos','Guiar análisis en Python o R'],
   ]
 ))}
+${card('Tareas de este bloque', checklist('sesion-2b-b2', [
+  'Explorar la tienda o galería e identificar 1–2 asistentes existentes útiles para investigación.',
+]))}
 `
     },
     {
@@ -1107,6 +1100,10 @@ Usa tablas, listas de chequeo, resúmenes estructurados o guías paso a paso cua
 
 Cierre:
 Finaliza con una recomendación práctica o siguiente paso verificable.`)}
+${card('Tareas de este bloque', checklist('sesion-2b-b3', [
+  'Definir el propósito del asistente usando el metaprompt o la plantilla de instrucciones.',
+  'Redactar las instrucciones del asistente: rol, tareas, restricciones y formato de salida.',
+]))}
 `
     },
     {
@@ -1147,6 +1144,9 @@ ${card('Ejercicio: Matriz de capacidades', tabla(
     ['Compartir','Sí/No',''],
   ]
 ))}
+${card('Tareas de este bloque', checklist('sesion-2b-b4', [
+  'Adjuntar archivos de referencia (p. ej. una plantilla de ficha) y activar las capacidades necesarias (análisis de archivos, búsqueda web).',
+]))}
 `
     },
     {
@@ -1177,6 +1177,10 @@ ${card('Lista de verificación rápida', tabla(
     ['Es útil para la tarea definida',''],
   ]
 ))}
+${card('Tareas de este bloque', checklist('sesion-2b-b5', [
+  'Probar el asistente con un artículo real y ajustar las instrucciones según el resultado.',
+  'Guardar el asistente y, si aplica, configurar cómo compartirlo.',
+]))}
 `
     },
     {
@@ -1212,35 +1216,6 @@ ${checklist('s2b-productos', [
   'Prueba inicial realizada con consulta real (2B)',
   'Decisión preliminar de compartir o mantener privado (2B)',
 ])}
-`)}
-`
-    },
-    {
-      id: 's2b-checklist',
-      title: 'Checklist de la sesión',
-      content: `
-${card('Checklist de actividades · GPT personalizados y Gems', `
-<div class="checklist-container" data-key="sesion-2b">
-  <div class="checklist-header">
-    <span class="checklist-progress">0 / 7 completados</span>
-    <button class="btn-reset-checklist">Reiniciar</button>
-  </div>
-  <div class="progress-bar-wrap"><div class="progress-bar" style="width:0%"></div></div>
-  <ul class="checklist-items">
-    <li class="checklist-group-hdr">Bloque 1. Acceso a la plataforma</li>
-    <li class="checklist-item"><input type="checkbox"><label>Acceder a la sección de creación de GPTs (ChatGPT) o Gems (Gemini).</label></li>
-    <li class="checklist-group-hdr">Bloque 2. Exploración de GPT Store / Gems</li>
-    <li class="checklist-item"><input type="checkbox"><label>Explorar la tienda o galería e identificar 1–2 asistentes existentes útiles para investigación.</label></li>
-    <li class="checklist-group-hdr">Bloque 3. Diseño del asistente personalizado</li>
-    <li class="checklist-item"><input type="checkbox"><label>Definir el propósito del asistente (p. ej. "extraer la metodología de artículos") usando el metaprompt o la plantilla de instrucciones.</label></li>
-    <li class="checklist-item"><input type="checkbox"><label>Redactar las instrucciones del asistente: rol, tareas, restricciones y formato de salida.</label></li>
-    <li class="checklist-group-hdr">Bloque 4. Recursos y capacidades</li>
-    <li class="checklist-item"><input type="checkbox"><label>Adjuntar archivos de referencia (p. ej. una plantilla de ficha) y activar las capacidades necesarias (análisis de archivos, búsqueda web).</label></li>
-    <li class="checklist-group-hdr">Bloque 5. Prueba, ajuste y compartir</li>
-    <li class="checklist-item"><input type="checkbox"><label>Probar el asistente con un artículo real y ajustar las instrucciones según el resultado.</label></li>
-    <li class="checklist-item"><input type="checkbox"><label>Guardar el asistente y, si aplica, configurar cómo compartirlo.</label></li>
-  </ul>
-</div>
 `)}
 `
     },
@@ -1383,6 +1358,9 @@ Define:
 5. Sinónimos y términos de búsqueda.
 6. Tipos de fuentes prioritarias.
 7. Criterios de inclusión y exclusión de fuentes.`)}
+${card('Tareas de esta actividad', checklist('sesion-3a-a2', [
+  'Formular una pregunta de investigación clara y delimitar su alcance (población, periodo, tipo de fuentes).',
+]))}
 `
     },
     {
@@ -1428,6 +1406,9 @@ Entrega un informe estructurado con:
 7. Limitaciones de la evidencia encontrada.
 8. Referencias o fuentes consultadas.`, 'maestro')}
 ${prompt('Variación: revisión metodológica', `Realiza una investigación profunda centrada en métodos de investigación sobre este tema. Prioriza estudios empíricos y revisiones. Extrae diseño, población, variables, desenlaces, métodos analíticos, principales resultados y limitaciones.`)}
+${card('Tareas de esta actividad', checklist('sesion-3a-a3', [
+  'Activar la función de investigación profunda (Deep Research) y lanzar la consulta con el prompt principal.',
+]))}
 `
     },
     {
@@ -1454,6 +1435,9 @@ ${card('Criterios de evaluación', tabla(
     ['Trazabilidad','¿Se puede verificar fácilmente?'],
   ]
 ))}
+${card('Tareas de esta actividad', checklist('sesion-3a-a4', [
+  'Revisar las fuentes citadas y evaluar su calidad con la matriz (tipo, vigencia, pertinencia, riesgo de sesgo).',
+]))}
 `
     },
     {
@@ -1470,6 +1454,10 @@ ${prompt('Prompt de síntesis académica', `A partir del informe y la matriz de 
 4. Qué implicaciones tiene para investigación en salud.
 5. Qué precauciones deben tenerse al interpretar esta evidencia.`)}
 <div class="info-section dorado"><strong>Producto:</strong> Síntesis breve que servirá como insumo para el componente de escritura asistida (Sesión 3B).</div>
+${card('Tareas de esta actividad', checklist('sesion-3a-a5', [
+  'Solicitar una síntesis estructurada de los hallazgos con su nivel de certeza.',
+  'Identificar vacíos o afirmaciones que requieren verificación adicional.',
+]))}
 `
     },
     {
@@ -1487,6 +1475,9 @@ ${card('Entregables al terminar la primera hora', `
   <li>Lista de vacíos o preguntas pendientes.</li>
 </ol>
 `, '0:55–1:00')}
+${card('Tarea de cierre', checklist('sesion-3a-cierre', [
+  'Exportar o guardar el informe en el proyecto correspondiente.',
+]))}
 `
     },
     {
@@ -1501,34 +1492,6 @@ ${checklist('s3a-productos', [
   'Síntesis académica breve (máximo 250 palabras)',
   'Lista de vacíos o preguntas pendientes identificados',
 ])}
-`)}
-`
-    },
-    {
-      id: 's3a-checklist',
-      title: 'Checklist de la sesión',
-      content: `
-${card('Checklist de actividades · Investigación profunda asistida', `
-<div class="checklist-container" data-key="sesion-3a">
-  <div class="checklist-header">
-    <span class="checklist-progress">0 / 6 completados</span>
-    <button class="btn-reset-checklist">Reiniciar</button>
-  </div>
-  <div class="progress-bar-wrap"><div class="progress-bar" style="width:0%"></div></div>
-  <ul class="checklist-items">
-    <li class="checklist-group-hdr">Actividad 2. Formulación de pregunta y alcance</li>
-    <li class="checklist-item"><input type="checkbox"><label>Formular una pregunta de investigación clara y delimitar su alcance (población, periodo, tipo de fuentes).</label></li>
-    <li class="checklist-group-hdr">Actividad 3. Ejecución de investigación profunda</li>
-    <li class="checklist-item"><input type="checkbox"><label>Activar la función de investigación profunda (Deep Research) y lanzar la consulta con el prompt principal.</label></li>
-    <li class="checklist-group-hdr">Actividad 4. Revisión crítica de fuentes</li>
-    <li class="checklist-item"><input type="checkbox"><label>Revisar las fuentes citadas y evaluar su calidad con la matriz (tipo, vigencia, pertinencia, riesgo de sesgo).</label></li>
-    <li class="checklist-group-hdr">Actividad 5. Síntesis de hallazgos y vacíos</li>
-    <li class="checklist-item"><input type="checkbox"><label>Solicitar una síntesis estructurada de los hallazgos con su nivel de certeza.</label></li>
-    <li class="checklist-item"><input type="checkbox"><label>Identificar vacíos o afirmaciones que requieren verificación adicional.</label></li>
-    <li class="checklist-group-hdr">Cierre del componente</li>
-    <li class="checklist-item"><input type="checkbox"><label>Exportar o guardar el informe en el proyecto correspondiente.</label></li>
-  </ul>
-</div>
 `)}
 `
     },
@@ -1630,6 +1593,9 @@ ${card('Usos riesgosos', tabla(
     ['Reemplazar autoría','Delegar análisis intelectual central'],
   ]
 ))}
+${card('Tareas de esta actividad', checklist('sesion-3b-a1', [
+  'Repasar los principios de uso responsable: la IA asiste, no reemplaza el criterio del autor.',
+]))}
 `
     },
     {
@@ -1674,6 +1640,9 @@ Genera:
 4. Secuencia argumentativa.
 5. Evidencia que debe apoyar cada sección.
 6. Precauciones de redacción.`)}
+${card('Tareas de esta actividad', checklist('sesion-3b-a2', [
+  'Generar con la IA un esquema o estructura del texto a partir de la idea o los hallazgos.',
+]))}
 `
     },
     {
@@ -1700,6 +1669,9 @@ ${prompt('Variante para introducción (500 palabras)', `Redacta una introducció
 
 No inventes referencias. Usa marcadores como [Referencia 1] donde deba citarse una fuente verificada.`)}
 ${prompt('Variante para resumen estructurado', `Redacta un resumen estructurado de máximo 250 palabras con los apartados: introducción, objetivo, métodos de la revisión exploratoria, resultados principales, conclusiones e implicaciones.`)}
+${card('Tareas de esta actividad', checklist('sesion-3b-a3', [
+  'Redactar una sección apoyándose en la IA, manteniendo la voz y las decisiones propias.',
+]))}
 `
     },
     {
@@ -1731,6 +1703,10 @@ ${card('Tabla esperada de observaciones', tabla(
   ]
 ))}
 ${prompt('Segunda iteración', `Reescribe el texto incorporando las recomendaciones anteriores. Mantén un tono formal y académico, reduce redundancias y conserva los marcadores de referencia donde corresponda.`)}
+${card('Tareas de esta actividad', checklist('sesion-3b-a4', [
+  'Pedir revisión de claridad, coherencia y estilo, y comparar con la versión propia.',
+  'Verificar afirmaciones y referencias (control de alucinaciones).',
+]))}
 `
     },
     {
@@ -1751,6 +1727,9 @@ ${card('Opciones de adaptación', tabla(
   ]
 ), '1:45–1:55')}
 ${prompt('Prompt de adaptación', `Convierte el borrador anterior en [formato deseado] para [audiencia]. Mantén fidelidad al contenido, conserva los puntos que requieren citación y evita agregar información no verificada.`)}
+${card('Tareas de esta actividad', checklist('sesion-3b-a5', [
+  'Adaptar el texto a un formato y audiencia específicos (p. ej. resumen para congreso, párrafo para artículo).',
+]))}
 `
     },
     {
@@ -1766,6 +1745,9 @@ ${prompt('Prompt para generar declaración', `Ayúdame a redactar una declaraci�
   <strong>Ejemplo de declaración:</strong><br>
   Se utilizó inteligencia artificial generativa como apoyo para la organización preliminar de ideas, síntesis inicial de fuentes, elaboración de borradores y revisión de estilo. Las fuentes, afirmaciones, interpretaciones y la versión final del texto fueron verificadas y ajustadas por el autor, quien conserva la responsabilidad académica sobre el contenido.
 </div>
+${card('Tareas de esta actividad', checklist('sesion-3b-a6', [
+  'Redactar la declaración de uso de IA según las normas de la revista o institución.',
+]))}
 `
     },
     {
@@ -1784,36 +1766,6 @@ ${checklist('s3b-productos', [
   'Versión adaptada a otro formato (3B)',
   'Declaración de uso de IA (3B)',
 ])}
-`)}
-`
-    },
-    {
-      id: 's3b-checklist',
-      title: 'Checklist de la sesión',
-      content: `
-${card('Checklist de actividades · Escritura asistida por IA', `
-<div class="checklist-container" data-key="sesion-3b">
-  <div class="checklist-header">
-    <span class="checklist-progress">0 / 7 completados</span>
-    <button class="btn-reset-checklist">Reiniciar</button>
-  </div>
-  <div class="progress-bar-wrap"><div class="progress-bar" style="width:0%"></div></div>
-  <ul class="checklist-items">
-    <li class="checklist-group-hdr">Actividad 1. Principios de escritura asistida</li>
-    <li class="checklist-item"><input type="checkbox"><label>Repasar los principios de uso responsable: la IA asiste, no reemplaza el criterio del autor.</label></li>
-    <li class="checklist-group-hdr">Actividad 2. Planeación del texto</li>
-    <li class="checklist-item"><input type="checkbox"><label>Generar con la IA un esquema o estructura del texto a partir de la idea o los hallazgos.</label></li>
-    <li class="checklist-group-hdr">Actividad 3. Redacción del primer borrador</li>
-    <li class="checklist-item"><input type="checkbox"><label>Redactar una sección apoyándose en la IA, manteniendo la voz y las decisiones propias.</label></li>
-    <li class="checklist-group-hdr">Actividad 4. Revisión crítica y mejora</li>
-    <li class="checklist-item"><input type="checkbox"><label>Pedir revisión de claridad, coherencia y estilo, y comparar con la versión propia.</label></li>
-    <li class="checklist-item"><input type="checkbox"><label>Verificar afirmaciones y referencias (control de alucinaciones).</label></li>
-    <li class="checklist-group-hdr">Actividad 5. Adaptación de formato</li>
-    <li class="checklist-item"><input type="checkbox"><label>Adaptar el texto a un formato y audiencia específicos (p. ej. resumen para congreso, párrafo para artículo).</label></li>
-    <li class="checklist-group-hdr">Actividad 6. Declaración de uso de IA</li>
-    <li class="checklist-item"><input type="checkbox"><label>Redactar la declaración de uso de IA según las normas de la revista o institución.</label></li>
-  </ul>
-</div>
 `)}
 `
     },
