@@ -1795,6 +1795,68 @@ ${card('Tarea posterior sugerida', `
   tabs: [
     tabPresentacion('sesion-4.pdf', 'Sesión 4 · Análisis de bases de datos con chatbot y Python'),
     {
+      id: 's4-req',
+      title: 'Requisitos de la sesión',
+      content: `
+${card('Preparación previa', `
+<ul>
+  <li>Cuenta de <strong>Google</strong> activa (para Google Colab y Drive).</li>
+  <li>Acceso a <strong>Google Colab</strong> verificado (<a href="https://colab.research.google.com" target="_blank" rel="noopener">colab.research.google.com</a>).</li>
+  <li>Base de datos de ejemplo <strong>subida a Google Drive</strong> antes de la sesión (archivo Excel o CSV proporcionado por el facilitador).</li>
+  <li>Acceso a un chatbot (ChatGPT o Gemini) para asistencia de código.</li>
+  <li>No se requiere experiencia previa en Python; el chatbot guiará la programación.</li>
+</ul>
+`)}
+${card('Contexto del caso de trabajo', `
+<p>Cada estudiante recibirá una base de datos. En el ejemplo principal, la base contiene información de pacientes con variables:</p>
+<ul>
+  <li>Demográficas.</li>
+  <li>Clínicas.</li>
+  <li>Factores de riesgo.</li>
+  <li>Signos del examen físico.</li>
+  <li>Laboratorios.</li>
+  <li>Desenlace: presencia o ausencia de COVID-19 (variable binaria: COVID = sí/no).</li>
+</ul>
+<p><strong>Base de ejemplo:</strong> 1.067 registros, 47 variables, desenlace COVID desbalanceado.</p>
+`)}
+`
+    },
+    {
+      id: 's4-obj',
+      title: 'Objetivos y resultados',
+      content: `
+${card('Propósito general', `
+<p>Guiar a los estudiantes en el análisis transparente y reproducible de una base de datos en salud, siguiendo el flujo de trabajo de ciencia de datos y utilizando un chatbot como asistente para comprender, generar, revisar y documentar código en Python.</p>
+<p>La sesión no se centrará únicamente en "obtener resultados", sino en aprender a construir un análisis paso a paso, entendible, verificable y reutilizable.</p>
+`)}
+${card('Resultados de aprendizaje', `
+<ol class="objetivo-lista">
+  <li>Ingresar a Google Colab y crear un cuaderno de trabajo.</li>
+  <li>Vincular Google Colab con Google Drive.</li>
+  <li>Cargar una base de datos en formato Excel o CSV.</li>
+  <li>Utilizar Python para explorar estructura, tipos de variables y valores faltantes.</li>
+  <li>Diferenciar variables predictoras y variable desenlace.</li>
+  <li>Realizar análisis descriptivo básico general y estratificado por desenlace.</li>
+  <li>Construir un flujo reproducible usando celdas de texto y código.</li>
+  <li>Usar el chatbot para generar, depurar y explicar código.</li>
+  <li>Entrenar modelos predictivos básicos en Python.</li>
+  <li>Interpretar métricas de desempeño: sensibilidad, especificidad, F1, ROC AUC y matriz de confusión.</li>
+  <li>Reconocer riesgos metodológicos: sobreajuste, desbalance de clases y fuga de información.</li>
+</ol>
+`)}
+${card('Estructura global de la sesión', tabla(
+  ['Tiempo','Bloque','Actividad','Producto'],
+  [
+    ['0:00–0:05','Presentación inicial','Marco conceptual y objetivo del laboratorio','Comprensión del flujo'],
+    ['0:05–0:15','Bloque 1','Google Colab, Python básico y cuaderno introductorio','Cuaderno creado'],
+    ['0:15–0:30','Bloque 2','Base de datos: descripción y carga en Colab','Base importada'],
+    ['0:30–0:45','Bloque 3','Planificación del análisis con el chatbot','Plan por fases'],
+    ['0:45–2:00','Bloque 4','Análisis fase a fase asistido por el chatbot','Cuaderno con análisis'],
+  ]
+))}
+`
+    },
+    {
       id: 's4-b1',
       title: 'Bloque 1. Generalidades de Google Colab y Python',
       content: `
@@ -1926,6 +1988,51 @@ ${card('Checklist de cumplimiento por fases', `
     <li class="checklist-item"><input type="checkbox"><label>Interpretar los resultados y las variables más influyentes; señalar limitaciones.</label></li>
   </ul>
 </div>
+`)}
+`
+    },
+    {
+      id: 's4-producto',
+      title: 'Producto final',
+      content: `
+${card('Producto mínimo esperado: secciones del cuaderno Colab', `
+${checklist('s4-productos', [
+  'Introducción: descripción breve de la base y del desenlace',
+  'Carga de datos: código funcional para importar la base',
+  'Exploración inicial: dimensiones, columnas, tipos de datos',
+  'Desenlace: distribución de COVID u otro desenlace',
+  'Valores faltantes: tabla de cantidad y porcentaje',
+  'Análisis descriptivo: estadísticos generales y por desenlace',
+  'Preprocesamiento: separación X/y, train/test y pipeline',
+  'Modelamiento: al menos dos modelos entrenados y comparados',
+  'Evaluación: tabla comparativa de métricas',
+  'Interpretación: comentario crítico sobre desempeño y limitaciones',
+])}
+`)}
+`
+    },
+    {
+      id: 's4-tarea',
+      title: 'Tarea posterior',
+      content: `
+${card('Tarea posterior sugerida', `
+<p>Cada estudiante deberá entregar el cuaderno de Google Colab con:</p>
+<ol>
+  <li>Código ejecutado sin errores.</li>
+  <li>Comentarios en Markdown antes de cada bloque.</li>
+  <li>Tabla descriptiva de la población.</li>
+  <li>Tabla comparativa de modelos.</li>
+  <li>Interpretación crítica de máximo 300 palabras.</li>
+  <li>Tres prompts utilizados durante el análisis.</li>
+  <li>Una reflexión breve: <strong>¿En qué pasos el chatbot fue más útil y en cuáles fue necesario verificar cuidadosamente su respuesta?</strong></li>
+</ol>
+`)}
+${card('Recomendación pedagógica', `
+<p>Para mantener la sesión dentro de las 2 horas, conviene entregar a los estudiantes un <strong>cuaderno base parcialmente estructurado</strong>, con títulos y algunas celdas iniciales. Durante la sesión, los estudiantes completan y ejecutan los bloques principales.</p>
+<div class="info-section">
+  <strong>Lógica del flujo:</strong> Comprender la base → cargar datos → explorar → limpiar → describir → preparar → modelar → evaluar → interpretar críticamente.
+</div>
+<p>El foco no debe ser obtener el mejor modelo posible, sino aprender un flujo de trabajo reproducible, transparente y asistido por IA.</p>
 `)}
 `
     },
