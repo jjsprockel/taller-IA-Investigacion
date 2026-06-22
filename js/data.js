@@ -1859,6 +1859,7 @@ ${card('Estructura global de la sesión', tabla(
     {
       id: 's4-b1',
       title: 'Bloque 1. Generalidades de Google Colab y Python',
+      badge: '0:05–0:15 · 10 min',
       content: `
 ${card('¿Qué harás en este bloque?', `
 <p>Conocerás Google Colab y los conceptos básicos de Python, y generarás tu propio cuaderno de trabajo. Usa el siguiente prompt en un chatbot (ChatGPT, Gemini o Claude) para crear un cuaderno introductorio. <strong>Se espera que el chatbot entregue un archivo <code>.ipynb</code></strong> (cuaderno de Jupyter) listo para abrir en Colab.</p>
@@ -1902,6 +1903,7 @@ ${card('Cómo cargar y ejecutar el cuaderno en Colab / Drive', `
     {
       id: 's4-b2',
       title: 'Bloque 2. Explicación de la base de datos',
+      badge: '0:15–0:30 · 15 min',
       content: `
 ${card('Descripción de la base de datos', `
 <p>La base utilizada en esta sesión corresponde a una versión modificada y ampliada con datos sintéticos de una base de datos clínica original de pacientes hospitalizados en pisos con sospecha de COVID-19 en los hospitales HSJ, HIUSJ y El Tunal, entre 2020 y 2021. Se conservaron la estructura, las variables y la distribución general del desenlace, pero se introdujeron perturbaciones en las variables continuas y se añadieron registros sintéticos equivalentes al 50 % del tamaño original. La base se utiliza <strong>exclusivamente con fines docentes</strong> para ilustrar el flujo de trabajo de ciencia de datos en salud, desde la carga y exploración de los datos hasta el desarrollo inicial de modelos predictivos. <strong>El desenlace final es la presencia o ausencia de COVID-19.</strong></p>
@@ -1926,6 +1928,7 @@ ${card('Acceso a la base de datos', `
     {
       id: 's4-b3',
       title: 'Bloque 3. Solicitud del análisis por pasos',
+      badge: '0:30–0:45 · 15 min',
       content: `
 ${card('¿Qué harás en este bloque?', `
 <p>Entrega la base y su descripción a un chatbot y pídele que <strong>planifique el análisis paso a paso</strong> siguiendo las fases de ciencia de datos (hasta modelos predictivos). El resultado de este bloque es la <strong>lista de actividades por fase</strong>, que usarás en el Bloque 4.</p>
@@ -1946,6 +1949,7 @@ ITERACIÓN. Al final, pregúntame si deseo ajustar el alcance, agregar variables
     {
       id: 's4-b4',
       title: 'Bloque 4. Análisis de la base de datos en Python',
+      badge: '0:45–2:00 · 1 h 15 min',
       content: `
 ${card('Cómo usar este bloque', `
 <p>Copia las actividades del Bloque 3 <strong>una fase a la vez</strong> y pídele al chatbot que genere el código Python documentado para esa fase. Ejecuta en Colab, verifica el resultado y marca las casillas a medida que completas cada fase.</p>
