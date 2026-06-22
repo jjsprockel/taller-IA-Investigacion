@@ -1803,26 +1803,24 @@ ${card('¿Qué harás en este bloque?', `
 `)}
 ${prompt('Prompt para generar el cuaderno introductorio · listo para usar en el chatbot', `ROL. Actúa como docente experto en enseñar Python y Google Colab a profesionales de la salud (médicos, epidemiólogos) sin experiencia previa en programación. Eres didáctico, paciente y claro; explicas cada paso en lenguaje sencillo y normalizas el error como parte del aprendizaje.
 
-CONTEXTO. El material es para la Sesión 4 ("Análisis de bases de datos con chatbot y Python") de un taller de IA aplicada a la investigación clínica y epidemiológica. Los estudiantes usarán Google Colab desde el navegador, con una cuenta de Google. No tienen Python instalado ni saben programar. El propósito es que pierdan el miedo, entiendan los conceptos mínimos y logren cargar datos, explorarlos y graficarlos.
+CONTEXTO. El material es para la Sesión 4 de un taller de IA aplicada a la investigación clínica y epidemiológica. Los estudiantes usarán Google Colab desde el navegador, con una cuenta de Google. No tienen Python instalado ni saben programar. El propósito de ESTE cuaderno es únicamente INTRODUCIR Google Colab y los conceptos básicos de Python para que pierdan el miedo y se familiaricen con el entorno. El análisis de una base de datos se hará después, en otra actividad: este cuaderno NO debe incluir análisis de datos clínicos ni modelos.
 
-TAREA. Genera un cuaderno de Jupyter (.ipynb) ejecutable de principio a fin en Colab que enseñe, de forma progresiva. Cada tema debe tener una celda de texto que lo explique, una celda de código corta y comentada, y una breve interpretación del resultado esperado:
+TAREA. Genera un cuaderno de Jupyter (.ipynb) introductorio, ejecutable de principio a fin en Colab. Cada tema debe tener una celda de texto que lo explique, una celda de código corta y comentada, y una breve interpretación del resultado esperado:
 1. Portada e índice (título, para quién es, objetivos, tiempo estimado).
 2. ¿Qué es Colab y un cuaderno? Celdas de texto vs. código; ejecutar (Shift+Enter); el código corre en la nube; reiniciar/conectar el entorno; guardar copia en Drive.
 3. Primeros pasos en Python: print(), comentarios, variables, tipos (número, texto, booleano), operaciones; mostrar un error y explicar cómo leerlo.
 4. Estructuras básicas: listas y diccionarios, indexación, un for simple.
-5. Funciones y librerías: importar con alias (pandas as pd, numpy as np, matplotlib.pyplot as plt).
-6. Crear un conjunto de datos de salud sintético con numpy/pandas (con semilla aleatoria) y guardarlo como CSV, para que el cuaderno corra sin archivos externos.
-7. Carga de archivos — Método 1: subida directa (from google.colab import files; files.upload()) y lectura con pandas.
-8. Carga de archivos — Método 2: desde Google Drive (from google.colab import drive; drive.mount(...)) y lectura desde una ruta de Drive.
-9. Explorar datos con pandas: read_csv, head, shape, info, describe, columns; seleccionar columnas; filtrar filas; value_counts; valores faltantes (isna, dropna/fillna); un groupby con interpretación.
-10. Visualizar con matplotlib: histograma, barras y dispersión, con título y etiquetas; guardar una figura.
-11. Ejemplo integrador: una mini pregunta respondida con los datos (cargar → limpiar → resumir → graficar → interpretar).
-12. Apoyarse en el chatbot: cómo pedir que genere/explique/corrija código; verificar siempre; errores comunes (NameError, FileNotFoundError, KeyError).
-13. Buenas prácticas y datos sensibles: NO subir datos identificables de pacientes (PHI); usar datos anonimizados/sintéticos; reproducibilidad; exportar resultados.
-14. Cierre y recursos.
-Incluye mini-ejercicios opcionales a partir de la sección 9.
+5. Funciones y librerías: qué es una función; importar con alias (pandas as pd, matplotlib.pyplot as plt).
+6. Carga de archivos — Método 1: subida directa (from google.colab import files; files.upload()).
+7. Carga de archivos — Método 2: desde Google Drive (from google.colab import drive; drive.mount(...)) y lectura de un archivo desde una ruta de Drive.
+8. Primer contacto con pandas (solo presentación): qué es un DataFrame; crear uno pequeño "de juguete" con datos inventados (no clínicos) y ver head(), info() y describe() para conocer estos comandos básicos. NO hagas exploración avanzada (sin filtros, groupby ni manejo de faltantes).
+9. Primer contacto con matplotlib (solo presentación): un gráfico simple (barras o línea) con datos de juguete, con título y etiquetas de ejes.
+10. Apoyarse en el chatbot: cómo pedir que genere/explique/corrija código; verificar siempre; errores comunes (NameError, FileNotFoundError, KeyError).
+11. Buenas prácticas y datos sensibles: NO subir datos identificables de pacientes (PHI); reproducibilidad (ejecutar las celdas en orden); guardar copia en Drive.
+12. Cierre y recursos.
+Incluye 1–2 mini-ejercicios opcionales muy sencillos (p. ej. crear una variable o cambiar un texto), sin relación con análisis de datos.
 
-RESTRICCIONES. Usa solo librerías preinstaladas en Colab (pandas, numpy, matplotlib); no uses pip install. El cuaderno debe correr de arriba a abajo sin errores. No inventes datos reales de pacientes. Explicaciones en español, claras y breves. Código corto y comentado, legible antes que elegante. Tono que reduzca la ansiedad del usuario no programador.
+RESTRICCIONES. Este cuaderno es INTRODUCTORIO: no incluyas análisis de una base de datos clínica ni modelos predictivos (eso se hará después). pandas y matplotlib se presentan solo a nivel introductorio, con ejemplos mínimos de juguete e inventados. Usa solo librerías preinstaladas en Colab (pandas, matplotlib); no uses pip install. El cuaderno debe correr de arriba a abajo sin errores. Explicaciones en español, claras y breves. Código corto y comentado, legible antes que elegante. Tono que reduzca la ansiedad del usuario no programador.
 
 FORMATO. Entrega el resultado como archivo .ipynb descargable, válido para abrir en Colab. Si no puedes generar archivos, entrégalo celda por celda marcando [CELDA DE TEXTO] o [CELDA DE CÓDIGO], en orden. Usa encabezados markdown y secciones numeradas, con portada e índice. Al final, una lista de verificación: "¿pude ejecutar todo el cuaderno sin errores?".
 
