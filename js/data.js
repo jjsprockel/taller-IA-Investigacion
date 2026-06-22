@@ -187,18 +187,6 @@ ${tabla(
     ['4','Notebook Colab, descriptivos, modelos, métricas e interpretación crítica.'],
   ]
 )}
-<h3>Rúbrica global</h3>
-${tabla(
-  ['Criterio','Excelente','Aceptable','Requiere mejora'],
-  [
-    ['Pertinencia','El producto responde claramente al objetivo y al contexto de salud.','Responde parcialmente al objetivo.','No se ajusta al objetivo o carece de contexto.'],
-    ['Trazabilidad','Las afirmaciones se vinculan a fuentes, datos o decisiones explícitas.','Hay trazabilidad parcial.','No se puede verificar el origen de la información.'],
-    ['Uso de IA','Los prompts son claros, iterativos y documentados.','Los prompts son comprensibles pero poco refinados.','El uso de IA es genérico o no documentado.'],
-    ['Rigor metodológico','Reconoce límites, sesgos y necesidades de verificación.','Reconoce algunas limitaciones.','Interpreta sin cautela o con sobreafirmaciones.'],
-    ['Producto académico','Claro, completo, organizado y reutilizable.','Funcional pero con problemas de claridad o estructura.','Incompleto o difícil de utilizar.'],
-    ['Reflexión crítica','Identifica utilidad, riesgos y acciones de mejora.','Reflexión breve con algunos elementos críticos.','No hay reflexión o es meramente descriptiva.'],
-  ]
-)}
 `)}
 `
   }]
