@@ -1807,6 +1807,11 @@ ${card('Contexto del caso de trabajo', `
 </ul>
 <p><strong>Base de ejemplo:</strong> 1.067 registros, 47 variables, desenlace COVID desbalanceado.</p>
 `)}
+${card('Base de datos de la sesión', `
+<p>Descarga el archivo antes de la sesión y tenlo disponible en tu computador o en Google Drive.</p>
+<a href="https://docs.google.com/spreadsheets/d/1-uba3yPMg8cNxaS4yY-ntLJZkd-E_a4T/edit?usp=sharing&ouid=102176472948909380311&rtpof=true&sd=true" target="_blank" rel="noopener" class="btn-action-primary" style="display:inline-block;margin-top:4px">Descargar base de datos (Excel)</a>
+<p style="margin-top:12px;font-size:.9em;color:var(--texto-sec)">En Google Sheets: <strong>Archivo → Descargar → Microsoft Excel (.xlsx)</strong> o <strong>Valores separados por comas (.csv)</strong>.</p>
+`)}
 `
     },
     {
