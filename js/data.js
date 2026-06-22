@@ -1795,389 +1795,142 @@ ${card('Tarea posterior sugerida', `
   tabs: [
     tabPresentacion('sesion-4.pdf', 'Sesión 4 · Análisis de bases de datos con chatbot y Python'),
     {
-      id: 's4-req',
-      title: 'Requisitos de la sesión',
-      content: `
-${card('Preparación previa', `
-<ul>
-  <li>Cuenta de <strong>Google</strong> activa (para Google Colab y Drive).</li>
-  <li>Acceso a <strong>Google Colab</strong> verificado (<a href="https://colab.research.google.com" target="_blank" rel="noopener">colab.research.google.com</a>).</li>
-  <li>Base de datos de ejemplo <strong>subida a Google Drive</strong> antes de la sesión (archivo Excel o CSV proporcionado por el facilitador).</li>
-  <li>Acceso a un chatbot (ChatGPT o Gemini) para asistencia de código.</li>
-  <li>No se requiere experiencia previa en Python; el chatbot guiará la programación.</li>
-</ul>
-`)}
-${card('Contexto del caso de trabajo', `
-<p>Cada estudiante recibirá una base de datos. En el ejemplo principal, la base contiene información de pacientes con variables:</p>
-<ul>
-  <li>Demográficas.</li>
-  <li>Clínicas.</li>
-  <li>Factores de riesgo.</li>
-  <li>Signos del examen físico.</li>
-  <li>Laboratorios.</li>
-  <li>Desenlace: presencia o ausencia de COVID-19 (variable binaria: COVID = sí/no).</li>
-</ul>
-<p><strong>Base de ejemplo:</strong> 711 registros, 47 variables, desenlace COVID desbalanceado.</p>
-`)}
-`
-    },
-    {
-      id: 's4-obj',
-      title: 'Objetivos y resultados',
-      content: `
-${card('Propósito general', `
-<p>Guiar a los estudiantes en el análisis transparente y reproducible de una base de datos en salud, siguiendo el flujo de trabajo de ciencia de datos y utilizando un chatbot como asistente para comprender, generar, revisar y documentar código en Python.</p>
-<p>La sesión no se centrará únicamente en "obtener resultados", sino en aprender a construir un análisis paso a paso, entendible, verificable y reutilizable.</p>
-`)}
-${card('Resultados de aprendizaje', `
-<ol class="objetivo-lista">
-  <li>Ingresar a Google Colab y crear un cuaderno de trabajo.</li>
-  <li>Vincular Google Colab con Google Drive.</li>
-  <li>Cargar una base de datos en formato Excel o CSV.</li>
-  <li>Utilizar Python para explorar estructura, tipos de variables y valores faltantes.</li>
-  <li>Diferenciar variables predictoras y variable desenlace.</li>
-  <li>Realizar análisis descriptivo básico general y estratificado por desenlace.</li>
-  <li>Construir un flujo reproducible usando celdas de texto y código.</li>
-  <li>Usar el chatbot para generar, depurar y explicar código.</li>
-  <li>Entrenar modelos predictivos básicos en Python.</li>
-  <li>Interpretar métricas de desempeño: sensibilidad, especificidad, F1, ROC AUC y matriz de confusión.</li>
-  <li>Reconocer riesgos metodológicos: sobreajuste, desbalance de clases y fuga de información.</li>
-</ol>
-`)}
-${card('Estructura global de la sesión', tabla(
-  ['Tiempo','Bloque','Actividad','Producto'],
-  [
-    ['0:00–0:05','Presentación inicial','Marco conceptual y objetivo del laboratorio','Comprensión del flujo'],
-    ['0:05–0:15','Acceso y preparación','Google Colab, Drive y organización del archivo','Cuaderno creado'],
-    ['0:15–0:30','Carga de datos','Cargar Excel/CSV y verificar estructura','Base importada'],
-    ['0:30–0:45','Exploración inicial','Dimensiones, columnas, tipos, desenlace','Diagnóstico inicial'],
-    ['0:45–1:05','Limpieza y preparación','Nombres de variables, faltantes, codificación','Base lista para análisis'],
-    ['1:05–1:25','Análisis descriptivo','Descripción general y por COVID','Tablas descriptivas'],
-    ['1:25–1:40','Preprocesamiento','Separación X/y, train/test, pipelines','Datos preparados'],
-    ['1:40–1:55','Modelos predictivos','Regresión logística, XGBoost, LightGBM','Modelos entrenados'],
-    ['1:55–2:00','Cierre','Interpretación, reproducibilidad y tarea posterior','Plan de continuidad'],
-  ]
-))}
-`
-    },
-    {
       id: 's4-b1',
-      title: 'Bloque 1. Acceso a Google Colab',
-      badge: '0:05–0:15 · 10 min',
+      title: 'Bloque 1. Generalidades de Google Colab y Python',
       content: `
-${card('Actividades', `
+${card('¿Qué harás en este bloque?', `
+<p>Conocerás Google Colab y los conceptos básicos de Python, y generarás tu propio cuaderno de trabajo. Usa el siguiente prompt en un chatbot (ChatGPT, Gemini o Claude) para crear un cuaderno introductorio. <strong>Se espera que el chatbot entregue un archivo <code>.ipynb</code></strong> (cuaderno de Jupyter) listo para abrir en Colab.</p>
+`)}
+${prompt('Prompt para generar el cuaderno introductorio · listo para usar en el chatbot', `ROL. Actúa como docente experto en enseñar Python y Google Colab a profesionales de la salud (médicos, epidemiólogos) sin experiencia previa en programación. Eres didáctico, paciente y claro; explicas cada paso en lenguaje sencillo y normalizas el error como parte del aprendizaje.
+
+CONTEXTO. El material es para la Sesión 4 ("Análisis de bases de datos con chatbot y Python") de un taller de IA aplicada a la investigación clínica y epidemiológica. Los estudiantes usarán Google Colab desde el navegador, con una cuenta de Google. No tienen Python instalado ni saben programar. El propósito es que pierdan el miedo, entiendan los conceptos mínimos y logren cargar datos, explorarlos y graficarlos.
+
+TAREA. Genera un cuaderno de Jupyter (.ipynb) ejecutable de principio a fin en Colab que enseñe, de forma progresiva. Cada tema debe tener una celda de texto que lo explique, una celda de código corta y comentada, y una breve interpretación del resultado esperado:
+1. Portada e índice (título, para quién es, objetivos, tiempo estimado).
+2. ¿Qué es Colab y un cuaderno? Celdas de texto vs. código; ejecutar (Shift+Enter); el código corre en la nube; reiniciar/conectar el entorno; guardar copia en Drive.
+3. Primeros pasos en Python: print(), comentarios, variables, tipos (número, texto, booleano), operaciones; mostrar un error y explicar cómo leerlo.
+4. Estructuras básicas: listas y diccionarios, indexación, un for simple.
+5. Funciones y librerías: importar con alias (pandas as pd, numpy as np, matplotlib.pyplot as plt).
+6. Crear un conjunto de datos de salud sintético con numpy/pandas (con semilla aleatoria) y guardarlo como CSV, para que el cuaderno corra sin archivos externos.
+7. Carga de archivos — Método 1: subida directa (from google.colab import files; files.upload()) y lectura con pandas.
+8. Carga de archivos — Método 2: desde Google Drive (from google.colab import drive; drive.mount(...)) y lectura desde una ruta de Drive.
+9. Explorar datos con pandas: read_csv, head, shape, info, describe, columns; seleccionar columnas; filtrar filas; value_counts; valores faltantes (isna, dropna/fillna); un groupby con interpretación.
+10. Visualizar con matplotlib: histograma, barras y dispersión, con título y etiquetas; guardar una figura.
+11. Ejemplo integrador: una mini pregunta respondida con los datos (cargar → limpiar → resumir → graficar → interpretar).
+12. Apoyarse en el chatbot: cómo pedir que genere/explique/corrija código; verificar siempre; errores comunes (NameError, FileNotFoundError, KeyError).
+13. Buenas prácticas y datos sensibles: NO subir datos identificables de pacientes (PHI); usar datos anonimizados/sintéticos; reproducibilidad; exportar resultados.
+14. Cierre y recursos.
+Incluye mini-ejercicios opcionales a partir de la sección 9.
+
+RESTRICCIONES. Usa solo librerías preinstaladas en Colab (pandas, numpy, matplotlib); no uses pip install. El cuaderno debe correr de arriba a abajo sin errores. No inventes datos reales de pacientes. Explicaciones en español, claras y breves. Código corto y comentado, legible antes que elegante. Tono que reduzca la ansiedad del usuario no programador.
+
+FORMATO. Entrega el resultado como archivo .ipynb descargable, válido para abrir en Colab. Si no puedes generar archivos, entrégalo celda por celda marcando [CELDA DE TEXTO] o [CELDA DE CÓDIGO], en orden. Usa encabezados markdown y secciones numeradas, con portada e índice. Al final, una lista de verificación: "¿pude ejecutar todo el cuaderno sin errores?".
+
+ITERACIÓN. Al terminar, indícame qué partes conviene revisar o ampliar.`, 'maestro')}
+${card('Cómo cargar y ejecutar el cuaderno en Colab / Drive', `
 <ol>
-  <li>Ingresar a Google Colab.</li>
-  <li>Crear un nuevo cuaderno.</li>
-  <li>Nombrar el archivo: <code>Sesion4_Analisis_COVID_NombreEstudiante.ipynb</code></li>
-  <li>Crear una carpeta en Google Drive para el taller.</li>
-  <li>Subir allí la base de datos.</li>
-  <li>Vincular Google Colab con Drive.</li>
+  <li>Guarda el archivo <code>.ipynb</code> que generó el chatbot.</li>
+  <li>Entra a <a href="https://colab.research.google.com" target="_blank" rel="noopener">colab.research.google.com</a> (o abre Google Drive con tu cuenta).</li>
+  <li>En Colab: <strong>Archivo → Subir cuaderno</strong> y selecciona el <code>.ipynb</code>.</li>
+  <li>Para activar Colab desde Drive: en Drive haz <strong>Nuevo → Más → Google Colaboratory</strong>. Si no aparece, entra a <strong>Nuevo → Más → Conectar más aplicaciones</strong>, busca <strong>Colaboratory</strong> e instálalo.</li>
+  <li>Ejecuta cada celda con el botón ▶ o <strong>Shift+Enter</strong>, de arriba a abajo.</li>
+  <li>Guarda tu trabajo con <strong>Archivo → Guardar una copia en Drive</strong>.</li>
 </ol>
-`, '0:05–0:15')}
-${codigo('Python', `from google.colab import drive
-drive.mount('/content/drive')`)}
-${prompt('Prompt para el chatbot', `Actúa como tutor de Python para investigación en salud. Estoy trabajando en Google Colab y necesito cargar una base de datos desde Google Drive. Explícame paso a paso qué hace este código y cómo verificar que mi archivo está disponible.`)}
+`)}
 `
     },
     {
       id: 's4-b2',
-      title: 'Bloque 2. Carga de la base de datos',
-      badge: '0:15–0:30 · 15 min',
+      title: 'Bloque 2. Explicación de la base de datos',
       content: `
-${card('Importar la base y verificar estructura', ``, '0:15–0:30')}
-${codigo('Python', `import pandas as pd
-import numpy as np
-
-ruta = '/content/drive/MyDrive/Taller_IA_Salud/para IA.xlsx'
-df = pd.read_excel(ruta)
-df.head()`)}
-${codigo('Python — Verificación inicial', `df.shape
-df.columns
-df.info()`)}
-${codigo('Python — Alternativa: carga directa desde el computador', `from google.colab import files
-uploaded = files.upload()
-
-df = pd.read_excel('para IA.xlsx')
-df.head()`)}
-${prompt('Prompt para el chatbot', `Tengo una base de datos clínica cargada en un DataFrame llamado df. Ayúdame a escribir código en Python para revisar dimensiones, nombres de columnas, tipos de variables y primeras filas. Explica brevemente qué significa cada resultado.`)}
+${card('Descripción de la base de datos', `
+<p>La base utilizada en esta sesión corresponde a una versión modificada y ampliada con datos sintéticos de una base de datos clínica original de pacientes hospitalizados en pisos con sospecha de COVID-19 en los hospitales HSJ, HIUSJ y El Tunal, entre 2020 y 2021. Se conservaron la estructura, las variables y la distribución general del desenlace, pero se introdujeron perturbaciones en las variables continuas y se añadieron registros sintéticos equivalentes al 50 % del tamaño original. La base se utiliza <strong>exclusivamente con fines docentes</strong> para ilustrar el flujo de trabajo de ciencia de datos en salud, desde la carga y exploración de los datos hasta el desarrollo inicial de modelos predictivos. <strong>El desenlace final es la presencia o ausencia de COVID-19.</strong></p>
+`)}
+${card('Características de la base', tabla(
+  ['Característica','Base original','Base final anonimizada/sintética'],
+  [
+    ['Registros','711','1.067'],
+    ['Variables','47','47'],
+    ['Registros originales modificados','No aplica','711'],
+    ['Registros sintéticos adicionales','No aplica','356'],
+    ['Incremento de tamaño','No aplica','50,1 %'],
+    ['Desenlace conservado','COVID','COVID'],
+  ]
+))}
+${card('Acceso a la base de datos', `
+<p style="margin-bottom:12px">Abre el enlace y descarga la base con <strong>Archivo → Descargar → Valores separados por comas (.csv)</strong> o <strong>Microsoft Excel (.xlsx)</strong>. Luego cárgala en Colab con el método de subida directa o colócala en tu Google Drive (ver Bloque 1).</p>
+<a href="https://docs.google.com/spreadsheets/d/1-uba3yPMg8cNxaS4yY-ntLJZkd-E_a4T/edit?usp=sharing&ouid=102176472948909380311&rtpof=true&sd=true" target="_blank" rel="noopener" class="btn-action-primary" style="display:inline-block;margin-top:4px">Abrir base de datos en Google Sheets</a>
+`)}
 `
     },
     {
       id: 's4-b3',
-      title: 'Bloque 3. Exploración inicial',
-      badge: '0:30–0:45 · 15 min',
+      title: 'Bloque 3. Solicitud del análisis por pasos',
       content: `
-${card('Objetivo: comprender la composición de la base y confirmar el desenlace', ``, '0:30–0:45')}
-${codigo('Python', `df.describe(include='all').T
+${card('¿Qué harás en este bloque?', `
+<p>Entrega la base y su descripción a un chatbot y pídele que <strong>planifique el análisis paso a paso</strong> siguiendo las fases de ciencia de datos (hasta modelos predictivos). El resultado de este bloque es la <strong>lista de actividades por fase</strong>, que usarás en el Bloque 4.</p>
+`)}
+${prompt('Prompt de planificación del análisis · listo para usar en el chatbot', `ROL. Actúa como mentor en ciencia de datos aplicada a la salud, experto en guiar a profesionales clínicos que no programan habitualmente.
 
-df['COVID'].value_counts()
-df['COVID'].value_counts(normalize=True) * 100`)}
-${codigo('Python — Valores perdidos', `faltantes = df.isna().sum().sort_values(ascending=False)
-faltantes[faltantes > 0]
+CONTEXTO. Voy a trabajar en Google Colab con una base clínica (uso docente, datos anonimizados/sintéticos) de pacientes hospitalizados con sospecha de COVID-19: 1.067 registros y 47 variables. El desenlace a predecir es binario: presencia o ausencia de COVID-19. Adjunto la base y su descripción.
 
-porcentaje_faltantes = df.isna().mean().sort_values(ascending=False) * 100
-porcentaje_faltantes[porcentaje_faltantes > 0]`)}
-${prompt('Prompt para el chatbot', `Analiza estos resultados de exploración inicial. La variable desenlace es COVID. Ayúdame a interpretar el balance de clases, los valores perdidos y los posibles problemas antes de construir modelos predictivos.`)}
+TAREA. Propón un PLAN de análisis paso a paso siguiendo el flujo de ciencia de datos en salud, hasta la generación de modelos predictivos, dividido en fases. Para CADA fase indica: (a) su objetivo y (b) una lista enumerada de actividades concretas a ejecutar. Estas actividades serán las que luego copie, fase por fase, para que generes el código.
+
+RESTRICCIONES. Todavía NO escribas código (eso será en el siguiente paso). Piensa en un usuario que no programa habitualmente: actividades claras y verificables. En cada fase sugiere qué revisar/verificar antes de avanzar. Recuerda el carácter docente y sintético de los datos.
+
+FORMATO. Devuelve el plan como una lista por fases (Fase 1, Fase 2, …), cada una con su objetivo y sus actividades numeradas. Sé conciso.
+
+ITERACIÓN. Al final, pregúntame si deseo ajustar el alcance, agregar variables específicas o cambiar el tipo de modelo.`, 'maestro')}
 `
     },
     {
       id: 's4-b4',
-      title: 'Bloque 4. Limpieza y preparación',
-      badge: '0:45–1:05 · 20 min',
+      title: 'Bloque 4. Análisis de la base de datos en Python',
       content: `
-${card('Objetivo: preparar la base para análisis y modelamiento', ``, '0:45–1:05')}
-${codigo('Python — Limpieza de nombres de columnas', `df.columns = (
-    df.columns
-    .str.strip()
-    .str.replace(' ', '_')
-    .str.replace('-', '_')
-    .str.replace('/', '_')
-)
-df.columns`)}
-${codigo('Python — Revisión del desenlace', `df['COVID'].value_counts(dropna=False)`)}
-${codigo('Python — Separación de variables numéricas y categóricas', `variables_numericas = df.select_dtypes(include=['int64', 'float64']).columns.tolist()
-variables_categoricas = df.select_dtypes(include=['object', 'category', 'bool']).columns.tolist()
-
-variables_numericas, variables_categoricas`)}
-${codigo('Python — Revisión de duplicados', `df.duplicated().sum()`)}
-${prompt('Prompt para el chatbot', `Estoy preparando una base clínica para análisis predictivo. Dame una lista de chequeo para revisar antes de modelar: desenlace, duplicados, tipos de variables, valores perdidos, codificación de categorías y posible fuga de información.`)}
-`
-    },
-    {
-      id: 's4-b5',
-      title: 'Bloque 5. Análisis descriptivo',
-      badge: '1:05–1:25 · 20 min',
-      content: `
-${card('Objetivo: describir la población y comparar características según COVID', ``, '1:05–1:25')}
-${codigo('Python — Descripción general', `df.describe().T`)}
-${codigo('Python — Tabla de resumen por desenlace', `df.groupby('COVID').describe().T`)}
-${codigo('Python — Frecuencias de variables categóricas', `for col in variables_categoricas:
-    print(f'\\nVariable: {col}')
-    print(df[col].value_counts(dropna=False))`)}
-${codigo('Python — Visualización del desenlace', `import matplotlib.pyplot as plt
-
-df['COVID'].value_counts().plot(kind='bar')
-plt.title('Distribución del desenlace COVID')
-plt.xlabel('COVID')
-plt.ylabel('Frecuencia')
-plt.show()`)}
-${codigo('Python — Comparación por desenlace', `variable = 'Edad'
-if variable in df.columns:
-    df.boxplot(column=variable, by='COVID')
-    plt.title(f'{variable} según COVID')
-    plt.suptitle('')
-    plt.xlabel('COVID')
-    plt.ylabel(variable)
-    plt.show()`)}
-${prompt('Prompt para el chatbot', `Con base en estas tablas descriptivas, ayúdame a redactar una interpretación inicial en lenguaje académico. No afirmes causalidad. Distingue entre descripción, asociación exploratoria y predicción.`)}
-`
-    },
-    {
-      id: 's4-b6',
-      title: 'Bloque 6. Preprocesamiento',
-      badge: '1:25–1:40 · 15 min',
-      content: `
-${card('Objetivo: preparar los datos para entrenar modelos de forma reproducible', ``, '1:25–1:40')}
-${codigo('Python — Separación predictores y desenlace', `y = df['COVID']
-X = df.drop(columns=['COVID'])`)}
-${codigo('Python — División entrenamiento/prueba', `from sklearn.model_selection import train_test_split
-
-X_train, X_test, y_train, y_test = train_test_split(
-    X,
-    y,
-    test_size=0.2,
-    random_state=42,
-    stratify=y
-)`)}
-${codigo('Python — Variables numéricas y categóricas en train', `numeric_features = X_train.select_dtypes(include=['int64', 'float64']).columns.tolist()
-categorical_features = X_train.select_dtypes(include=['object', 'category', 'bool']).columns.tolist()
-
-numeric_features, categorical_features`)}
-${codigo('Python — Pipeline de preprocesamiento', `from sklearn.compose import ColumnTransformer
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import OneHotEncoder, StandardScaler
-from sklearn.impute import SimpleImputer
-
-numeric_transformer = Pipeline(steps=[
-    ('imputer', SimpleImputer(strategy='median')),
-    ('scaler', StandardScaler())
-])
-
-categorical_transformer = Pipeline(steps=[
-    ('imputer', SimpleImputer(strategy='most_frequent')),
-    ('onehot', OneHotEncoder(handle_unknown='ignore'))
-])
-
-preprocessor = ColumnTransformer(
-    transformers=[
-        ('num', numeric_transformer, numeric_features),
-        ('cat', categorical_transformer, categorical_features)
-    ]
-)`)}
-${prompt('Prompt para el chatbot', `Explícame este pipeline de preprocesamiento en Python. Indica por qué se imputan valores perdidos, por qué se escalan variables numéricas y por qué se usa one-hot encoding en variables categóricas.`)}
-`
-    },
-    {
-      id: 's4-b7',
-      title: 'Bloque 7. Modelos predictivos',
-      badge: '1:40–1:55 · 15 min',
-      content: `
-${card('Objetivo: entrenar tres modelos predictivos y comparar su desempeño', ``, '1:40–1:55')}
-${codigo('Python — 7.1 Regresión logística multivariada', `from sklearn.linear_model import LogisticRegression
-
-modelo_logistico = Pipeline(steps=[
-    ('preprocessor', preprocessor),
-    ('classifier', LogisticRegression(max_iter=1000, class_weight='balanced'))
-])
-
-modelo_logistico.fit(X_train, y_train)`)}
-${codigo('Python — 7.2 XGBoost', `!pip install xgboost -q
-
-from xgboost import XGBClassifier
-
-modelo_xgb = Pipeline(steps=[
-    ('preprocessor', preprocessor),
-    ('classifier', XGBClassifier(
-        eval_metric='logloss',
-        random_state=42
-    ))
-])
-
-modelo_xgb.fit(X_train, y_train)`)}
-${codigo('Python — 7.3 LightGBM', `!pip install lightgbm -q
-
-from lightgbm import LGBMClassifier
-
-modelo_lgbm = Pipeline(steps=[
-    ('preprocessor', preprocessor),
-    ('classifier', LGBMClassifier(
-        random_state=42,
-        class_weight='balanced'
-    ))
-])
-
-modelo_lgbm.fit(X_train, y_train)`)}
-${codigo('Python — Evaluación común de modelos', `from sklearn.metrics import (
-    accuracy_score,
-    balanced_accuracy_score,
-    precision_score,
-    recall_score,
-    f1_score,
-    roc_auc_score,
-    confusion_matrix,
-    classification_report
-)
-
-def evaluar_modelo(nombre, modelo, X_test, y_test):
-    y_pred = modelo.predict(X_test)
-    y_proba = modelo.predict_proba(X_test)[:, 1]
-
-    resultados = {
-        'modelo': nombre,
-        'accuracy': accuracy_score(y_test, y_pred),
-        'balanced_accuracy': balanced_accuracy_score(y_test, y_pred),
-        'precision': precision_score(y_test, y_pred),
-        'sensibilidad_recall': recall_score(y_test, y_pred),
-        'f1': f1_score(y_test, y_pred),
-        'roc_auc': roc_auc_score(y_test, y_proba)
-    }
-
-    print(f'\\nModelo: {nombre}')
-    print(confusion_matrix(y_test, y_pred))
-    print(classification_report(y_test, y_pred))
-
-    return resultados
-
-resultados = []
-resultados.append(evaluar_modelo('Regresión logística', modelo_logistico, X_test, y_test))
-resultados.append(evaluar_modelo('XGBoost', modelo_xgb, X_test, y_test))
-resultados.append(evaluar_modelo('LightGBM', modelo_lgbm, X_test, y_test))
-
-tabla_resultados = pd.DataFrame(resultados)
-tabla_resultados`)}
-${prompt('Prompt para interpretar resultados', `Interpreta esta tabla de resultados de modelos predictivos para COVID-19. Explica accuracy, balanced accuracy, sensibilidad, precisión, F1 y ROC AUC. Considera que el desenlace puede estar desbalanceado. No concluyas que el modelo es clínicamente útil sin validación externa.`, 'maestro')}
-`
-    },
-    {
-      id: 's4-b8',
-      title: 'Bloque 8. Cierre e interpretación crítica',
-      badge: '1:55–2:00 · 5 min',
-      content: `
-${card('Preguntas de cierre', `
-<ol>
-  <li>¿Cuál modelo tuvo mejor desempeño global?</li>
-  <li>¿Cuál modelo tuvo mejor sensibilidad?</li>
-  <li>¿Cuál tuvo mejor balance entre sensibilidad y especificidad?</li>
-  <li>¿La exactitud es suficiente para evaluar el modelo?</li>
-  <li>¿Qué riesgos tendría usar este modelo directamente en clínica?</li>
-  <li>¿Qué pasos faltan antes de considerar una aplicación real?</li>
-</ol>
-`, '1:55–2:00')}
-<div class="info-section dorado">
-  <strong>Mensaje final:</strong> El análisis predictivo en salud debe entenderse como un proceso reproducible, documentado y críticamente evaluado. El chatbot puede acelerar la programación y la documentación, pero no reemplaza la validación metodológica, estadística ni clínica.
+${card('Cómo usar este bloque', `
+<p>Copia las actividades del Bloque 3 <strong>una fase a la vez</strong> y pídele al chatbot que genere el código Python documentado para esa fase. Ejecuta en Colab, verifica el resultado y marca las casillas a medida que completas cada fase.</p>
+`)}
+${prompt('Prompt para generar el código de una fase · listo para usar en el chatbot', `Vas a generar el código Python de UNA fase del análisis. Contexto: trabajo en Google Colab con la base de pacientes con sospecha de COVID-19 (desenlace binario: presencia de COVID-19), ya cargada en un DataFrame de pandas llamado df.
+Requisitos: (1) el código debe correr en Colab sobre df; (2) coméntalo y explica cada paso en lenguaje claro; (3) muestra e interpreta los resultados; (4) no inventes variables que no existan en la base: si necesitas los nombres de columnas, pídeme que ejecute df.columns y te los pase; (5) usa solo librerías preinstaladas en Colab.
+Actividades de esta fase:
+[pega aquí las actividades de la fase correspondiente]`)}
+${card('Checklist de cumplimiento por fases', `
+<div class="checklist-container" data-key="sesion-4">
+  <div class="checklist-header">
+    <span class="checklist-progress">0 / 16 completados</span>
+    <button class="btn-reset-checklist">Reiniciar</button>
+  </div>
+  <div class="progress-bar-wrap"><div class="progress-bar" style="width:0%"></div></div>
+  <ul class="checklist-items">
+    <li class="checklist-group-hdr">Fase 1 — Comprensión del problema y de los datos</li>
+    <li class="checklist-item"><input type="checkbox"><label>Definir la pregunta y el desenlace (presencia de COVID-19, variable binaria).</label></li>
+    <li class="checklist-item"><input type="checkbox"><label>Revisar el listado de las 47 variables e identificar sus tipos (numéricas, categóricas).</label></li>
+    <li class="checklist-group-hdr">Fase 2 — Carga e inspección inicial</li>
+    <li class="checklist-item"><input type="checkbox"><label>Cargar la base en Colab (subida directa o desde Drive) con pandas.</label></li>
+    <li class="checklist-item"><input type="checkbox"><label>Inspeccionar dimensiones, primeras filas, tipos y valores faltantes (shape, head, info, isna).</label></li>
+    <li class="checklist-group-hdr">Fase 3 — Análisis exploratorio (EDA)</li>
+    <li class="checklist-item"><input type="checkbox"><label>Obtener estadísticos descriptivos de las numéricas y frecuencias de las categóricas.</label></li>
+    <li class="checklist-item"><input type="checkbox"><label>Graficar distribuciones (histogramas, barras) y la distribución del desenlace.</label></li>
+    <li class="checklist-group-hdr">Fase 4 — Limpieza y preparación</li>
+    <li class="checklist-item"><input type="checkbox"><label>Tratar los valores faltantes (imputar o eliminar, justificando la decisión).</label></li>
+    <li class="checklist-item"><input type="checkbox"><label>Revisar y manejar valores atípicos e inconsistencias en variables continuas.</label></li>
+    <li class="checklist-group-hdr">Fase 5 — Análisis bivariado y relación con el desenlace</li>
+    <li class="checklist-item"><input type="checkbox"><label>Comparar variables clave entre quienes tuvieron y no tuvieron COVID-19.</label></li>
+    <li class="checklist-item"><input type="checkbox"><label>Identificar variables potencialmente asociadas (tablas/gráficos comparativos).</label></li>
+    <li class="checklist-group-hdr">Fase 6 — Preparación para el modelado</li>
+    <li class="checklist-item"><input type="checkbox"><label>Codificar variables categóricas y, si aplica, escalar las numéricas.</label></li>
+    <li class="checklist-item"><input type="checkbox"><label>Dividir los datos en entrenamiento y prueba (train/test).</label></li>
+    <li class="checklist-group-hdr">Fase 7 — Entrenamiento de modelos predictivos</li>
+    <li class="checklist-item"><input type="checkbox"><label>Entrenar un modelo base (p. ej. regresión logística) para predecir el desenlace.</label></li>
+    <li class="checklist-item"><input type="checkbox"><label>Entrenar al menos un modelo adicional (p. ej. árbol de decisión o random forest) para comparar.</label></li>
+    <li class="checklist-group-hdr">Fase 8 — Evaluación e interpretación</li>
+    <li class="checklist-item"><input type="checkbox"><label>Calcular métricas (matriz de confusión, sensibilidad, especificidad, AUC).</label></li>
+    <li class="checklist-item"><input type="checkbox"><label>Interpretar los resultados y las variables más influyentes; señalar limitaciones.</label></li>
+  </ul>
 </div>
-`
-    },
-    {
-      id: 's4-prompts',
-      title: 'Prompts transversales',
-      content: `
-${card('Prompts para usar durante toda la sesión', `
-<p>Estos prompts pueden aplicarse en cualquier bloque de la Sesión 4:</p>
-`)}
-${prompt('Prompt 1. Explicar código', `Explícame línea por línea este código de Python. Estoy aprendiendo análisis de datos en salud y necesito entender qué hace cada parte, qué supuestos tiene y qué errores podrían aparecer.`)}
-${prompt('Prompt 2. Corregir error', `Tengo este error en Google Colab. Te comparto el código y el mensaje de error. Ayúdame a identificar la causa probable y propón una versión corregida del código. Explica el cambio.`)}
-${prompt('Prompt 3. Documentar una celda', `Ayúdame a escribir una celda de texto en formato Markdown para explicar el propósito de este paso del análisis en un cuaderno reproducible.`)}
-${prompt('Prompt 4. Interpretar una tabla', `Interpreta esta tabla en lenguaje académico para un informe de investigación en salud. No hagas afirmaciones causales y menciona las limitaciones del análisis exploratorio.`)}
-${prompt('Prompt 5. Revisar riesgos metodológicos', `Revisa críticamente este flujo de análisis predictivo. Identifica posibles riesgos de sesgo, fuga de información, sobreajuste, mal manejo de valores perdidos, desbalance del desenlace y problemas de interpretación clínica.`)}
-`
-    },
-    {
-      id: 's4-producto',
-      title: 'Producto final',
-      content: `
-${card('Producto mínimo esperado: secciones del cuaderno Colab', `
-${checklist('s4-productos', [
-  'Introducción: descripción breve de la base y del desenlace',
-  'Carga de datos: código funcional para importar la base',
-  'Exploración inicial: dimensiones, columnas, tipos de datos',
-  'Desenlace: distribución de COVID u otro desenlace',
-  'Valores faltantes: tabla de cantidad y porcentaje',
-  'Análisis descriptivo: estadísticos generales y por desenlace',
-  'Preprocesamiento: separación X/y, train/test y pipeline',
-  'Modelamiento: Regresión logística, XGBoost y LightGBM entrenados',
-  'Evaluación: tabla comparativa de métricas',
-  'Interpretación: comentario crítico sobre desempeño y limitaciones',
-])}
 `)}
 `
     },
-    {
-      id: 's4-tarea',
-      title: 'Tarea posterior',
-      content: `
-${card('Tarea posterior sugerida', `
-<p>Cada estudiante deberá entregar el cuaderno de Google Colab con:</p>
-<ol>
-  <li>Código ejecutado sin errores.</li>
-  <li>Comentarios en Markdown antes de cada bloque.</li>
-  <li>Tabla descriptiva de la población.</li>
-  <li>Tabla comparativa de modelos.</li>
-  <li>Interpretación crítica de máximo 300 palabras.</li>
-  <li>Tres prompts utilizados durante el análisis.</li>
-  <li>Una reflexión breve: <strong>¿En qué pasos el chatbot fue más útil y en cuáles fue necesario verificar cuidadosamente su respuesta?</strong></li>
-</ol>
-`)}
-${card('Recomendación pedagógica', `
-<p>Para mantener la sesión dentro de las 2 horas, conviene entregar a los estudiantes un <strong>cuaderno base parcialmente estructurado</strong>, con títulos y algunas celdas iniciales. Durante la sesión, los estudiantes completan y ejecutan los bloques principales.</p>
-<div class="info-section">
-  <strong>Lógica del flujo:</strong> Comprender la base → cargar datos → explorar → limpiar → describir → preparar → modelar → evaluar → interpretar críticamente.
-</div>
-<p>El foco no debe ser obtener el mejor modelo posible, sino aprender un flujo de trabajo reproducible, transparente y asistido por IA.</p>
-`)}
-`
-    }
   ]
 },
 
