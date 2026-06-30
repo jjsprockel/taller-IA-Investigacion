@@ -685,6 +685,19 @@ ${card('G · Ética, privacidad y verificación', tabla(
 ))}
 </div>
 `
+    },
+    {
+      id: 's1-evaluacion',
+      title: 'Evaluación de la sesión',
+      content: `
+${card('Cuestionario de calificación', `
+<p>Completa el siguiente cuestionario para registrar tu participación y ser evaluado en esta sesión.</p>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSdz7RaRfN-VJ62li79oG2jE7WqtopLoFanFzD7N6Vlw-qtboQ/viewform?usp=publish-editor"
+   target="_blank" rel="noopener" class="btn-action-primary" style="display:inline-block;margin-top:8px">
+  Abrir cuestionario →
+</a>
+`)}
+`
     }
   ]
 },
