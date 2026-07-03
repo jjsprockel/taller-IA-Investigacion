@@ -2046,6 +2046,19 @@ ${card('Recomendación pedagógica', `
 `)}
 `
     },
+    {
+      id: 's4-evaluacion',
+      title: 'Evaluación de la sesión',
+      content: `
+${card('Cuestionario de calificación', `
+<p>Completa el siguiente cuestionario para registrar tu participación y ser evaluado en esta sesión.</p>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSe9ghdBmH6Nt4kwST06HkWyj-VPT5ulO1c_xXsq0FrO40MKww/viewform?usp=header"
+   target="_blank" rel="noopener" class="btn-action-primary" style="display:inline-block;margin-top:8px">
+  Abrir cuestionario →
+</a>
+`)}
+`
+    },
   ]
 },
 
