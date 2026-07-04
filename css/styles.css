@@ -169,57 +169,6 @@ body {
   vertical-align: middle;
 }
 
-/* ── Grabaciones ── */
-.nav-grabaciones {
-  border-top: 1px solid rgba(255,255,255,.12);
-  padding: 12px 0 20px;
-  margin-top: 4px;
-}
-
-.nav-grabaciones-title {
-  color: #fff;
-  font-size: .78rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .06em;
-  opacity: .75;
-  padding: 4px 20px 8px;
-}
-
-.nav-grabaciones ul { list-style: none; padding: 0; margin: 0; }
-
-.nav-grabaciones li a {
-  display: flex;
-  align-items: center;
-  padding: 8px 20px;
-  color: rgba(255,255,255,.75);
-  text-decoration: none;
-  font-size: .84rem;
-  border-left: 3px solid transparent;
-  transition: all var(--trans);
-  line-height: 1.3;
-}
-
-.nav-grabaciones li a:hover {
-  background: rgba(255,255,255,.08);
-  color: #fff;
-  border-left-color: rgba(255,255,255,.4);
-}
-
-.nav-grab-num {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 18px;
-  height: 18px;
-  background: rgba(255,255,255,.18);
-  color: #fff;
-  font-size: .65rem;
-  font-weight: 700;
-  border-radius: 50%;
-  margin-right: 8px;
-  flex-shrink: 0;
-}
 
 /* ══════════════════════════════════════════════
    5. ÁREA DE CONTENIDO
@@ -992,7 +941,76 @@ footer strong { color: #fff; }
 .btn-action-secondary:focus-visible { outline: 2px solid var(--dorado); outline-offset: 3px; }
 
 /* ══════════════════════════════════════════════
-   19. LISTA DE OBJETIVOS
+   19. GRABACIONES
+   ══════════════════════════════════════════════ */
+.grab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.grab-card {
+  background: #fff;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 2px 8px rgba(10,18,45,.07);
+  transition: box-shadow var(--trans), transform var(--trans);
+}
+
+.grab-card:hover {
+  box-shadow: 0 6px 20px rgba(10,18,45,.13);
+  transform: translateY(-2px);
+}
+
+.grab-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.grab-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: var(--azul-marino);
+  color: var(--dorado);
+  font-size: 1.3rem;
+  font-weight: 800;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.grab-titulo {
+  font-size: .97rem;
+  font-weight: 700;
+  color: var(--azul-marino);
+  line-height: 1.3;
+}
+
+.grab-fecha {
+  font-size: .78rem;
+  color: var(--texto-sec);
+  margin-top: 3px;
+}
+
+.grab-desc {
+  font-size: .88rem;
+  color: var(--texto-sec);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.grab-btn { align-self: flex-start; }
+
+/* ══════════════════════════════════════════════
+   20. LISTA DE OBJETIVOS
    ══════════════════════════════════════════════ */
 .objetivo-lista {
   list-style: none;

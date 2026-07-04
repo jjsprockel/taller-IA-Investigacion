@@ -2062,7 +2062,79 @@ ${card('Cuestionario de calificación', `
   ]
 },
 
-/* ══════════════ 7. NOSOTROS ══════════════ */
+/* ══════════════ 7. GRABACIONES ══════════════ */
+{
+  id: 'grabaciones',
+  menuTitle: 'Grabaciones',
+  tabs: [
+    {
+      id: 'grab-principal',
+      title: 'Grabaciones del taller',
+      content: `
+${card('Acceso a las grabaciones', `
+<p>Aquí encontrarás los registros en video de cada sesión del taller. Haz clic en el botón de la sesión que deseas revisar para acceder a la grabación en Google Drive.</p>
+`)}
+<div class="grab-grid">
+
+  <div class="grab-card">
+    <div class="grab-card-header">
+      <span class="grab-num">4</span>
+      <div>
+        <div class="grab-titulo">Análisis de bases de datos con IA</div>
+        <div class="grab-fecha">4 de julio de 2026</div>
+      </div>
+    </div>
+    <p class="grab-desc">Exploración, limpieza y modelado predictivo de datos de salud usando chatbots como guías de código Python en Google Colab. Flujo completo desde la carga de datos hasta la evaluación e interpretación crítica de modelos.</p>
+    <a href="https://drive.google.com/file/d/1neaJGg5XoRsO2WokdX6zlP184jnnfR7L/view?usp=drive_link"
+       target="_blank" rel="noopener" class="btn-action-primary grab-btn">Ver grabación →</a>
+  </div>
+
+  <div class="grab-card">
+    <div class="grab-card-header">
+      <span class="grab-num">3</span>
+      <div>
+        <div class="grab-titulo">Investigación profunda y escritura asistida</div>
+        <div class="grab-fecha">2 de julio de 2026</div>
+      </div>
+    </div>
+    <p class="grab-desc">Búsqueda avanzada de literatura con IA y síntesis de evidencia (Sesión 3A), y redacción académica asistida: estructuración de secciones, revisión crítica y mejora iterativa de textos científicos (Sesión 3B).</p>
+    <a href="https://drive.google.com/file/d/145GAr3uKTT12FuCk60429qAmQ-S-p0kG/view?usp=drive_link"
+       target="_blank" rel="noopener" class="btn-action-primary grab-btn">Ver grabación →</a>
+  </div>
+
+  <div class="grab-card">
+    <div class="grab-card-header">
+      <span class="grab-num">2</span>
+      <div>
+        <div class="grab-titulo">NotebookLM y GPT personalizados</div>
+        <div class="grab-fecha">1 de julio de 2026</div>
+      </div>
+    </div>
+    <p class="grab-desc">Uso de NotebookLM para lectura y síntesis basada en fuentes propias (Sesión 2A), y configuración de GPTs y Gems para automatizar tareas específicas de investigación y docencia (Sesión 2B).</p>
+    <a href="https://drive.google.com/file/d/1x1GrjT5rioqvnij60zxLkVUHVJz3X4kw/view?usp=drive_link"
+       target="_blank" rel="noopener" class="btn-action-primary grab-btn">Ver grabación →</a>
+  </div>
+
+  <div class="grab-card">
+    <div class="grab-card-header">
+      <span class="grab-num">1</span>
+      <div>
+        <div class="grab-titulo">Del chatbot a la infografía metodológica</div>
+        <div class="grab-fecha">30 de junio de 2026</div>
+      </div>
+    </div>
+    <p class="grab-desc">Exploración de herramientas de IA generativa, formulación estratégica de prompts con contexto, rol y formato, extracción de metodología científica de artículos y generación de infografías académicas.</p>
+    <a href="https://drive.google.com/file/d/10kaExxZjIv25d7i6GT-KMKs2ZDhdqIAR/view?usp=drive_link"
+       target="_blank" rel="noopener" class="btn-action-primary grab-btn">Ver grabación →</a>
+  </div>
+
+</div>
+`
+    }
+  ]
+},
+
+/* ══════════════ 8. NOSOTROS ══════════════ */
 {
   id: 'nosotros',
   menuTitle: 'Nosotros · Equipo y Laboratorio',
