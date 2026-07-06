@@ -2158,6 +2158,7 @@ ${card('Acceso a las grabaciones', `
   <div class="nos-section-body">
     <p class="nos-lead">ProfundaMente es un laboratorio de investigación e innovación orientado al desarrollo de soluciones basadas en evidencia, la formación de talento y la transformación de los procesos clínicos, investigativos y educativos en salud.</p>
     <p>El laboratorio integra un equipo interdisciplinario de profesionales con experiencia en medicina, ciencias biomédicas, ciencia de datos e inteligencia artificial, comprometidos con la generación de conocimiento y su aplicación responsable en el contexto del sistema de salud.</p>
+    <a href="https://jjsprockel.github.io/profundamente-web/" target="_blank" rel="noopener" class="btn-action-primary" style="display:inline-block;margin-top:12px">Visitar sitio del laboratorio →</a>
   </div>
 </div>
 
