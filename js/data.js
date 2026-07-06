@@ -2306,30 +2306,26 @@ ${card('Lecturas recomendadas', `
 `)}
 <div class="grab-grid">
 
-  <div class="grab-card">
-    <div class="grab-card-header">
-      <div class="grab-num" style="font-size:.75rem;width:52px;height:52px;border-radius:10px;line-height:1.1;text-align:center;padding:4px">📖</div>
-      <div>
-        <div class="grab-titulo">Conceptos actuales en inteligencia artificial y su aplicación a la atención en salud</div>
-        <div class="grab-fecha">John Jaime Sprockel Díaz, MD · Distribuna Editorial · 2026</div>
-      </div>
+  <div class="grab-card bib-card">
+    <img src="assets/libro-conceptos-actuales.png" alt="Portada Conceptos actuales en IA" class="bib-cover">
+    <div class="bib-info">
+      <div class="grab-titulo">Conceptos actuales en inteligencia artificial y su aplicación a la atención en salud</div>
+      <div class="grab-fecha">John Jaime Sprockel Díaz, MD · Distribuna Editorial · 2026</div>
+      <p class="grab-desc">Segunda publicación del autor sobre IA aplicada a la medicina. Aborda los avances recientes en arquitecturas transformer, modelos de difusión, grandes modelos de lenguaje y sistemas multimodales, y su impacto transformador en la investigación clínica, la práctica médica y la educación en salud. ISBN: 978-628-7673-70-0.</p>
+      <a href="https://libreriamedica.com/ia-en-salud/1452-1012-conceptos-actuales-en-inteligencia-artificial-y-su-aplicacion-a-la-atencion-en-salud"
+         target="_blank" rel="noopener" class="btn-action-primary grab-btn">Ver libro →</a>
     </div>
-    <p class="grab-desc">Segunda publicación del autor sobre IA aplicada a la medicina. Aborda los avances recientes en arquitecturas transformer, modelos de difusión, grandes modelos de lenguaje y sistemas multimodales, y su impacto transformador en la investigación clínica, la práctica médica y la educación en salud. ISBN: 978-628-7673-70-0.</p>
-    <a href="https://libreriamedica.com/ia-en-salud/1452-1012-conceptos-actuales-en-inteligencia-artificial-y-su-aplicacion-a-la-atencion-en-salud"
-       target="_blank" rel="noopener" class="btn-action-primary grab-btn">Ver libro →</a>
   </div>
 
-  <div class="grab-card">
-    <div class="grab-card-header">
-      <div class="grab-num" style="font-size:.75rem;width:52px;height:52px;border-radius:10px;line-height:1.1;text-align:center;padding:4px">📖</div>
-      <div>
-        <div class="grab-titulo">Inteligencia artificial en medicina</div>
-        <div class="grab-fecha">John Jaime Sprockel Díaz, MD · FUCS · 2020</div>
-      </div>
+  <div class="grab-card bib-card">
+    <img src="assets/libro-ia-medicina.jpg" alt="Portada Inteligencia artificial en medicina" class="bib-cover">
+    <div class="bib-info">
+      <div class="grab-titulo">Inteligencia artificial en medicina</div>
+      <div class="grab-fecha">John Jaime Sprockel Díaz, MD · FUCS · 2020</div>
+      <p class="grab-desc">Primera publicación del autor sobre inteligencia artificial en el ámbito médico. Introduce los fundamentos conceptuales de la IA y sus aplicaciones prácticas en la atención en salud, la investigación clínica y la formación médica, en el contexto latinoamericano.</p>
+      <a href="https://www.fucsalud.edu.co/tienda-virtual/publicaciones/Inteligencia-artificial-en-medicina"
+         target="_blank" rel="noopener" class="btn-action-primary grab-btn">Ver libro →</a>
     </div>
-    <p class="grab-desc">Primera publicación del autor sobre inteligencia artificial en el ámbito médico. Introduce los fundamentos conceptuales de la IA y sus aplicaciones prácticas en la atención en salud, la investigación clínica y la formación médica, en el contexto latinoamericano.</p>
-    <a href="https://www.fucsalud.edu.co/tienda-virtual/publicaciones/Inteligencia-artificial-en-medicina"
-       target="_blank" rel="noopener" class="btn-action-primary grab-btn">Ver libro →</a>
   </div>
 
 </div>

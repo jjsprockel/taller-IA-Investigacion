@@ -1009,6 +1009,21 @@ footer strong { color: #fff; }
 
 .grab-btn { align-self: flex-start; }
 
+/* ── Tarjetas de bibliografía con portada ── */
+.bib-card { flex-direction: row; align-items: flex-start; gap: 20px; }
+.bib-cover {
+  width: 120px;
+  min-width: 120px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(10,18,45,.18);
+  object-fit: cover;
+}
+.bib-info { display: flex; flex-direction: column; gap: 10px; flex: 1; }
+@media (max-width: 540px) {
+  .bib-card { flex-direction: column; }
+  .bib-cover { width: 100%; min-width: unset; max-height: 220px; object-fit: contain; }
+}
+
 /* ══════════════════════════════════════════════
    20. LISTA DE OBJETIVOS
    ══════════════════════════════════════════════ */
